@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark:        #060D08;
+  --bg-surface:     #0D1710;
+  --bg-border:      #1A2E1E;
+  --certiva-green:  #1A4731;
+  --certiva-mid:    #2D6A4F;
+  --certiva-light:  #40916C;
+  --certiva-glow:   #52C27A;
+  --certiva-pale:   #D8F3DC;
+  --certiva-mist:   #F0FAF4;
+}
+
+@keyframes orb-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-20px, 15px) scale(0.98); }
+}
+
+@keyframes orb-float-alt {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-25px, 20px) scale(1.03); }
+  70%       { transform: translate(20px, -15px) scale(0.97); }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #52C27A 0%, #40916C 50%, #D8F3DC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--certiva-glow), transparent);
+  opacity: 0.3;
+}
+
+body {
+  background: #ffffff;
+  color: #111827;
+}
