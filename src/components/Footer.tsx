@@ -22,8 +22,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <img src="/logo-icon.svg" alt="" className="h-8 w-8" />
-              <img src="/logo-wordmark-white.svg" alt="Certiva" className="h-6" />
+              <img src="/logo-wordmark-white.svg" alt="Certiva" className="h-8" />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-gray-400">
               AI-powered ISO certification management. Built for accredited certification bodies.
