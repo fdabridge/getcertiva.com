@@ -44,7 +44,7 @@ export default function AIPage() {
           <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
             AI that understands{" "}<span className="gradient-text">ISO certification standards</span>
           </h1>
-          <p className="mt-4 text-lg text-[var(--text-muted)]">
+          <p className="mt-4 text-lg text-gray-300">
             Certiva doesn&apos;t use AI as a buzzword. Every AI feature solves a real, specific problem that costs certification bodies time and money.
           </p>
         </div>
@@ -57,10 +57,10 @@ export default function AIPage() {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
             className="relative z-10 mx-auto max-w-4xl px-6"
           >
-            <motion.h2 variants={fadeUp} className={`text-2xl font-extrabold ${f.dark ? "text-white" : "text-[var(--text-dark)]"}`}>
+            <motion.h2 variants={fadeUp} className={`text-2xl font-extrabold ${f.dark ? "text-white" : "text-gray-900"}`}>
               {f.title}
             </motion.h2>
-            <motion.p variants={fadeUp} className={`mt-4 leading-relaxed ${f.dark ? "text-[var(--text-muted)]" : "text-[var(--text-mid)]"}`}>
+            <motion.p variants={fadeUp} className={`mt-4 leading-relaxed ${f.dark ? "text-gray-300" : "text-gray-600"}`}>
               {f.desc}
             </motion.p>
             {"supported" in f && (
@@ -78,7 +78,7 @@ export default function AIPage() {
           <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-extrabold text-white">
             AI built for auditors, <span className="gradient-text">not for demos</span>
           </h2>
-          <p className="mt-4 text-[var(--text-muted)]">
+          <p className="mt-4 text-gray-300">
             Every AI feature in Certiva works on real certification data — not synthetic examples — and every output can be reviewed and overridden.
           </p>
           <Link href="/contact" className="mt-8 inline-block rounded-full bg-[var(--certiva-green)] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)]">

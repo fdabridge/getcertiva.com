@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
           <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
             14 phases. Nothing skipped.
           </h1>
-          <p className="mt-4 text-lg text-[var(--text-muted)]">
+          <p className="mt-4 text-lg text-gray-300">
             The complete ISO certification lifecycle — from client application to issued certificate.
           </p>
         </div>
@@ -45,8 +45,8 @@ export default function HowItWorksPage() {
                   {i < FOURTEEN_PHASES.length - 1 && <div className="mt-1 h-full min-h-[40px] w-px bg-gray-200" />}
                 </div>
                 <div className="pb-8">
-                  <h3 className="text-base font-bold text-[var(--text-dark)]">{phase.name}</h3>
-                  <p className="mt-1 text-sm text-[var(--text-mid)]">{phase.desc}</p>
+                  <h3 className="text-base font-bold text-gray-900">{phase.name}</h3>
+                  <p className="mt-1 text-sm text-gray-600">{phase.desc}</p>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {phase.docs !== "—" && (
                       <span className="rounded-full bg-[var(--certiva-pale)] px-2.5 py-0.5 text-[0.7rem] font-semibold text-[var(--certiva-green)]">
@@ -61,7 +61,7 @@ export default function HowItWorksPage() {
               </motion.div>
             ))}
           </motion.div>
-          <p className="mt-8 text-center text-sm text-[var(--text-mid)]">
+          <p className="mt-8 text-center text-sm text-gray-600">
             Surveillance and re-certification cycles follow an adapted flow — Stage 1 optional, committees required for major decisions.
           </p>
           <div className="mt-8 text-center">

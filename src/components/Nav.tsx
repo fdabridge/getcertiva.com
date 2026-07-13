@@ -31,10 +31,8 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--certiva-green)] text-sm font-black text-white">
-            C
-          </div>
-          <span className="text-lg font-bold text-white">Certiva</span>
+          <img src="/logo-icon.svg" alt="" className="h-8 w-8" />
+          <img src="/logo-wordmark-white.svg" alt="Certiva" className="h-6" />
         </Link>
 
         {/* Desktop links */}
@@ -43,7 +41,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-[var(--text-muted)] transition hover:text-white"
+              className="text-sm font-medium text-gray-300 transition hover:text-white"
             >
               {l.label}
             </Link>

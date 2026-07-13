@@ -22,21 +22,21 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--certiva-green)] text-sm font-black text-white">C</div>
-              <span className="text-lg font-bold text-white">Certiva</span>
+              <img src="/logo-icon.svg" alt="" className="h-8 w-8" />
+              <img src="/logo-wordmark-white.svg" alt="Certiva" className="h-6" />
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)]">
+            <p className="mt-4 text-sm leading-relaxed text-gray-400">
               AI-powered ISO certification management. Built for accredited certification bodies.
             </p>
           </div>
 
           {/* Platform */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--text-muted)]">Platform</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-gray-400">Platform</h4>
             <ul className="mt-4 space-y-2.5">
               {PLATFORM_LINKS.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-gray-400 transition hover:text-white">{l.label}</Link>
+                  <Link href={l.href} className="text-sm text-gray-300 transition hover:text-white">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -44,27 +44,27 @@ export default function Footer() {
 
           {/* Standards */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--text-muted)]">Standards</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-gray-400">Standards</h4>
             <ul className="mt-4 space-y-2.5">
               {STANDARDS.map((s) => (
-                <li key={s} className="text-sm text-gray-400">{s}</li>
+                <li key={s} className="text-sm text-gray-300">{s}</li>
               ))}
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--text-muted)]">Legal</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.1em] text-gray-400">Legal</h4>
             <ul className="mt-4 space-y-2.5">
-              <li><Link href="#" className="text-sm text-gray-400 transition hover:text-white">Privacy Policy</Link></li>
-              <li><Link href="#" className="text-sm text-gray-400 transition hover:text-white">Terms of Service</Link></li>
+              <li><Link href="#" className="text-sm text-gray-300 transition hover:text-white">Privacy Policy</Link></li>
+              <li><Link href="#" className="text-sm text-gray-300 transition hover:text-white">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="glow-line mt-12" />
-        <p className="mt-6 text-center text-xs text-gray-500">
+        <p className="mt-6 text-center text-xs text-gray-400">
           © {new Date().getFullYear()} Certiva · Built for ISO Certification Bodies · getcertiva.com
         </p>
       </div>

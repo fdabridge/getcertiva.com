@@ -15,7 +15,7 @@ const TABS = [
     label: "Audit Workflow",
     title: "14-phase lifecycle with enforced gates",
     bullets: [
-      "Application → Quotation → Agreement → FR.218 Review → Stage 1 → Stage 2 → Committee → Certificate",
+      "Application → Quotation → Agreement → Document Review → Stage 1 → Stage 2 → Committee → Certificate",
       "Each phase transition is gated — no skipping steps, no missing documents",
       "Planners see what needs scheduling, auditors see pending fieldwork, CMs see pending decisions",
       "Full status history with timestamps for every transition",
@@ -27,10 +27,10 @@ const TABS = [
     label: "Documents",
     title: "Every audit form, auto-generated",
     bullets: [
-      "FR.218 Initial Assessment, FR.222 Audit Programme, FR.223/224 Audit Plans",
-      "FR.225 Opening/Closing Meeting Forms with employee roster integration",
-      "FR.231 Stage 1 Report, FR.232 Stage 2 Report — pre-filled with auditor data",
-      "FR.233 Review & Decision Form — committee names, EA codes, and signature slots",
+      "Initial assessment reviews, audit programmes, audit plans",
+      "Opening/closing meeting forms with employee roster integration",
+      "Stage 1 and Stage 2 reports — pre-filled with auditor data",
+      "Review & decision forms — committee names, scope codes, and signature slots",
       "Export as DOCX for editing or download signed PDFs with embedded signatures",
     ],
   },
@@ -55,7 +55,7 @@ const TABS = [
       "System validates EA code and standard coverage for the audit scope",
       "Dynamic signature keys: each member gets their own signing slot",
       "Certification manager is blocked until all committee members have signed",
-      "FR.233 Review & Decision Form tracks all signatures and shows real-time status",
+      "Review & Decision Form tracks all signatures and shows real-time status",
     ],
   },
   {
@@ -79,7 +79,7 @@ const TABS = [
       "Digital agreement signing through the in-browser viewer",
       "Document status tracking — clients see which documents await their signature",
       "NC response workflow — upload corrective actions, track closure",
-      "Employee roster management for FR.225 meeting form signatures",
+      "Employee roster management for meeting form signatures",
     ],
   },
   {
@@ -88,7 +88,7 @@ const TABS = [
     title: "Focused auditor workspace",
     bullets: [
       "Dashboard shows only assigned audit sets and pending signatures",
-      "Upload stage reports (FR.231/FR.232), NC forms, and audit evidence",
+      "Upload stage reports, NC forms, and audit evidence",
       "NC decision submission per stage (no NC / NC items with categories)",
       "Sign documents through the visual signature viewer",
       "View audit plan details, team composition, and scheduled dates",
@@ -100,10 +100,34 @@ const TABS = [
     title: "Accreditation-ready infrastructure",
     bullets: [
       "IAF MD 5 audit time calculations with K-factor for risk adjustment",
-      "TÜRKAK and UAF rule set support",
+      "Multiple accreditation body rule sets supported",
       "Standard-specific scope systems: EA codes (QMS/EMS/OHSMS), ISMS categories (27001), food chain (22000), medical device (13485)",
       "Full audit trail — every signature, status change, and document version logged",
       "Auditor qualification tracking: per-standard EA codes, scope categories, technical depth",
+    ],
+  },
+  {
+    id: "crm",
+    label: "CRM",
+    title: "Built-in client relationship management",
+    bullets: [
+      "Client database with contact details, scope, standards, and audit history",
+      "Pipeline overview — see every active audit set and its current phase",
+      "Consultant referral tracking — consultants see their referred clients' progress",
+      "Finance overview for CRM staff — quotation values, payment status",
+      "The feature that other platforms call their entire product",
+    ],
+  },
+  {
+    id: "applications",
+    label: "Applications",
+    title: "Online client applications",
+    bullets: [
+      "Branded self-service application portal for new certification requests",
+      "Clients select standards, enter company details, and submit scope descriptions",
+      "Applications land directly in the planner's queue — no re-entry required",
+      "Automatic audit set creation from approved applications",
+      "Multi-standard applications supported (e.g. integrated QMS + EMS + OHSMS)",
     ],
   },
 ];
@@ -121,7 +145,7 @@ export default function FeaturesPage() {
           <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
             Every feature your CB needs
           </h1>
-          <p className="mt-4 text-lg text-[var(--text-muted)]">
+          <p className="mt-4 text-lg text-gray-300">
             Deep-dive into each capability. Click a tab to explore.
           </p>
         </div>
@@ -155,10 +179,10 @@ export default function FeaturesPage() {
             className="mt-12 grid gap-12 lg:grid-cols-2"
           >
             <div>
-              <h2 className="text-2xl font-extrabold text-[var(--text-dark)]">{active.title}</h2>
+              <h2 className="text-2xl font-extrabold text-gray-900">{active.title}</h2>
               <ul className="mt-6 space-y-4">
                 {active.bullets.map((b, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-[var(--text-mid)]">
+                  <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
                     <span className="mt-0.5 text-[var(--certiva-green)]">&#x2713;</span>
                     <span>{b}</span>
                   </li>

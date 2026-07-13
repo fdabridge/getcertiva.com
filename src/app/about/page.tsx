@@ -31,7 +31,7 @@ export default function AboutPage() {
           <h1 className="text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
             Built inside a certification body.{" "}<span className="gradient-text">For every certification body.</span>
           </h1>
-          <p className="mt-6 text-lg text-[var(--text-muted)]">
+          <p className="mt-6 text-lg text-gray-300">
             Certiva wasn&apos;t designed in a startup studio looking at the certification market from the outside. It was built by people who were frustrated with running one.
           </p>
         </div>
@@ -40,10 +40,10 @@ export default function AboutPage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-3xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="prose prose-lg max-w-none">
-            <motion.p variants={fadeUp} className="text-[var(--text-mid)] leading-relaxed">
+            <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed">
               Running an accredited certification body means managing dozens of simultaneous audit lifecycles. Most available software was either generic project management adapted for auditing, or legacy systems that predate digital signatures and IAF MD 5. The result was spreadsheets, email threads, and manual PDF assembly — every one of which is a potential gap in the audit trail when an accreditation body comes for a witness audit.
             </motion.p>
-            <motion.p variants={fadeUp} className="mt-4 text-[var(--text-mid)] leading-relaxed">
+            <motion.p variants={fadeUp} className="mt-4 text-gray-600 leading-relaxed">
               Certiva was built to solve this from the inside. Every document template is the actual FR form. Every workflow step reflects the actual IAF requirement. Every signing chain matches what accreditation bodies expect to see.
             </motion.p>
           </motion.div>
@@ -52,12 +52,12 @@ export default function AboutPage() {
 
       <section className="bg-[var(--certiva-mist)] py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-2xl font-extrabold text-[var(--text-dark)]">Our values</h2>
+          <h2 className="text-center text-2xl font-extrabold text-gray-900">Our values</h2>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="mt-12 grid gap-6 sm:grid-cols-2">
             {VALUES.map((v) => (
               <motion.div key={v.title} variants={fadeUp} className="rounded-2xl border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-bold text-[var(--certiva-green)]">{v.title}</h3>
-                <p className="mt-2 text-sm text-[var(--text-mid)]">{v.desc}</p>
+                <p className="mt-2 text-sm text-gray-600">{v.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -66,12 +66,12 @@ export default function AboutPage() {
 
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-center text-2xl font-extrabold text-[var(--text-dark)]">Who it&apos;s for</h2>
+          <h2 className="text-center text-2xl font-extrabold text-gray-900">Who it&apos;s for</h2>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="mt-12 grid gap-6 sm:grid-cols-3">
             {WHO_FOR.map((w) => (
               <motion.div key={w.title} variants={fadeUp} className="rounded-2xl border border-gray-200 bg-white p-6 text-center">
-                <h3 className="text-lg font-bold text-[var(--text-dark)]">{w.title}</h3>
-                <p className="mt-2 text-sm text-[var(--text-mid)]">{w.desc}</p>
+                <h3 className="text-lg font-bold text-gray-900">{w.title}</h3>
+                <p className="mt-2 text-sm text-gray-600">{w.desc}</p>
               </motion.div>
             ))}
           </motion.div>

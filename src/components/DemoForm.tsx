@@ -51,10 +51,12 @@ export default function DemoForm() {
       <input name="standards" placeholder="Standards you operate (e.g. ISO 9001, 14001, 27001)" className={inputClass} />
       <select name="accreditation" className={inputClass} defaultValue="">
         <option value="" disabled>Accreditation body</option>
-        <option>TÜRKAK</option>
-        <option>UAF</option>
         <option>JAS-ANZ</option>
         <option>UKAS</option>
+        <option>DAkkS</option>
+        <option>ANAB</option>
+        <option>SAS</option>
+        <option>COFRAC</option>
         <option>Other</option>
         <option>Not yet accredited</option>
       </select>
