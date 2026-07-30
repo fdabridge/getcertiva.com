@@ -10,16 +10,16 @@ const fadeUp = {
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
 const VALUES = [
-  { title: "Precision over convenience", desc: "Certification decisions have real consequences for the organizations they cover. Certiva enforces correct processes." },
-  { title: "Standards are not interchangeable", desc: "ISO 27001 and ISO 9001 have different EA codes, different scope systems, different audit time rules. We handle each correctly." },
-  { title: "The audit trail is the product", desc: "Every signature, decision, and document version is logged. Your accreditation body will find everything, in the right order." },
-  { title: "AI as infrastructure, not theater", desc: "Our AI features solve problems auditors and planners actually have — not impressive demos." },
+  { title: "Your process, enforced — not just documented", desc: "Other platforms document your process. Certiva enforces it. Stage 2 can't start with open Stage 1 NCs. The certificate can't issue until the committee has signed. These aren't guidelines — they're gates." },
+  { title: "One system, not five", desc: "Certification management, document generation, digital signing, training academy, CRM — one platform instead of five separate tools with five separate invoices and five separate logins." },
+  { title: "The audit trail is the product", desc: "Every signature, decision, status change, and communication is timestamped and stored. Your accreditation body will find everything, in the right order. That's not a feature — it's the point." },
+  { title: "AI as infrastructure, not theater", desc: "Our AI drafts reports, reviews them against accreditation-body rules, calculates audit days, and suggests clause exclusions. Every output is reviewable and overridable. The AI does the heavy lifting — you keep the judgment." },
 ];
 
 const WHO_FOR = [
-  { title: "Small CBs", desc: "1–3 standards, boutique operation. Need structure without overhead." },
-  { title: "Multi-standard CBs", desc: "4–8 standards, multiple accreditation bodies. Need a system that handles scope complexity." },
-  { title: "CBs seeking accreditation", desc: "Building the paper trail from scratch. Need to get it right from day one." },
+  { title: "Small CBs (1–3 standards)", desc: "You need structure without overhead. One system handles your entire lifecycle — applications, documents, signing, training, and the audit trail your accreditation body expects — without a team of administrators." },
+  { title: "Multi-standard CBs (4–8 standards)", desc: "Integrated audits across ISO 9001, 14001, 45001, 27001, and more. Each standard with its correct scope system, and audit time calculations that handle MD 11 integration reductions automatically." },
+  { title: "CBs seeking accreditation", desc: "Building the paper trail from day one. When the accreditation body comes for assessment, every process step, every document version, every signing chain is already recorded and in order." },
 ];
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
             Built inside a certification body.{" "}<span className="gradient-text">For every certification body.</span>
           </h1>
           <p className="mt-6 text-lg text-gray-300">
-            Certiva wasn&apos;t designed in a startup studio looking at the certification market from the outside. It was built by people who were frustrated with running one.
+            Certiva wasn&apos;t built by a software company looking at certification from the outside. It was built by people who were tired of losing hours to manual reports, chasing signatures by email, and hoping nothing was missing when the accreditation body showed up.
           </p>
         </div>
       </section>
@@ -41,10 +41,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="prose prose-lg max-w-none">
             <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed">
-              Running an accredited certification body means managing dozens of simultaneous audit lifecycles. Most available software was either generic project management adapted for auditing, or legacy systems that predate digital signatures and IAF MD 5. The result was spreadsheets, email threads, and manual PDF assembly — every one of which is a potential gap in the audit trail when an accreditation body comes for a witness audit.
+              Running an accredited certification body means managing dozens of simultaneous audit lifecycles — each with its own standards, scope systems, document sets, and signing chains. The tools available were either generic project management with &quot;audit&quot; bolted on, or legacy systems that predate digital signatures, IAF MD 5 calculators, and AI report generation. The result: spreadsheets for tracking, email for signatures, manual PDF assembly for documents, a separate LMS for training, and a prayer that nothing was missing when the accreditation body asked for proof.
             </motion.p>
             <motion.p variants={fadeUp} className="mt-4 text-gray-600 leading-relaxed">
-              Certiva was built to solve this from the inside. Every document template is the actual FR form. Every workflow step reflects the actual IAF requirement. Every signing chain matches what accreditation bodies expect to see.
+              Certiva was built to end that. Every document template is the CB&apos;s actual FR form. Every workflow gate reflects the actual IAF requirement. Every signing chain matches what accreditation bodies expect. And when the AB asks for proof of process or communication, it&apos;s already recorded — in order, with timestamps.
             </motion.p>
           </motion.div>
         </div>

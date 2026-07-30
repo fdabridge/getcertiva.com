@@ -25,7 +25,7 @@ export default function Footer() {
               <img src="/logo-wordmark-white.svg" alt="Certiva" className="h-8" />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-gray-400">
-              AI-powered ISO certification management. Built for accredited certification bodies.
+              The complete operations platform for accredited certification bodies. Built inside a real CB.
             </p>
           </div>
 

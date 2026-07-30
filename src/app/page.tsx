@@ -32,34 +32,34 @@ const STANDARDS_DISPLAY = [
 
 const PROBLEMS = [
   {
-    icon: MessageSquare,
-    title: "Communication Proof for Accreditation",
-    desc: "Every client communication — notifications, document releases, status updates — is logged with timestamps. When your accreditation body asks for proof of communication, it is already there.",
+    icon: AlertTriangle,
+    title: "Skipped steps surface at witness audits",
+    desc: "A planner forgets to get impartiality declarations signed before Stage 1. A document goes missing between stages. You don\u2019t find out until the accreditation body does \u2014 at your witness audit.",
+  },
+  {
+    icon: FileText,
+    title: "Manual reports drift in quality",
+    desc: "Each auditor writes reports differently. Some miss mandatory clauses, others misclassify NCs. Without automated review, these problems reach the accreditation body as findings against your CB.",
   },
   {
     icon: PenLine,
-    title: "Real-Time Document Signing",
-    desc: "No more printing, scanning, and emailing PDFs back and forth. Auditors, reviewers, committee members, and clients sign documents directly in the browser with visual signature placement.",
+    title: "Weeks chasing signatures",
+    desc: "The lead auditor signed, but the reviewer is travelling. The committee member hasn\u2019t seen the document. Nobody knows who signed what, or when. Print, scan, email, repeat.",
   },
   {
     icon: CalendarCheck,
-    title: "Auditor Double-Booking Prevention",
-    desc: "The system checks auditor availability across all active audit sets before scheduling. No room for human error — if an auditor is booked, the planner sees it immediately.",
+    title: "Missed surveillance = suspended certificate",
+    desc: "Surveillance dates anchored to the Stage 2 audit, tracked yearly across dozens of clients. One missed window, and the certificate is suspended. Was it in someone\u2019s calendar? A spreadsheet row?",
   },
   {
-    icon: ShieldCheck,
-    title: "Audit Team Scope Coverage",
-    desc: "Before a stage can be scheduled, Certiva validates that the audit team covers every required scope code and standard. Gaps are flagged with specific explanations — no manual checklist needed.",
+    icon: BookOpen,
+    title: "Separate training software, per-seat fees",
+    desc: "You\u2019re already paying for certification management tools, a CRM, and document storage. Now add a standalone LMS with per-seat pricing for auditor training. Five systems, five logins, five invoices.",
   },
   {
-    icon: Eye,
-    title: "Auditor Witness Tracking",
-    desc: "The system tracks when each auditor was last witnessed and alerts planners when a witness audit is due. No more spreadsheet tracking or missed witness deadlines.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Zero NC Risk from Accreditation",
-    desc: "Complete audit trail for every decision, signature, and document version. Enforced workflow gates mean nothing is skipped. Your accreditation body finds everything in place, every time.",
+    icon: MessageSquare,
+    title: "No proof when the accreditation body asks",
+    desc: "The AB asks: \u2018Show me the communication trail for this client\u2019s Stage 1 delay.\u2019 You search email threads, shared drives, and chat histories. The proof exists \u2014 somewhere. Maybe.",
   },
 ];
 
@@ -72,17 +72,17 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <motion.div initial="hidden" animate="visible" variants={stagger}>
             <motion.div variants={fadeUp}>
-              <SectionBadge dark>Complete CB Operations · AI-Powered · ISO 17021-1 Compliant</SectionBadge>
+              <SectionBadge dark>Built Inside a Certification Body</SectionBadge>
             </motion.div>
             <motion.h1
               variants={fadeUp}
               className="mt-8 text-[clamp(2.5rem,6vw,5rem)] font-black leading-[1.05] tracking-[-0.03em] text-white"
             >
-              The Platform That Runs Your Entire{" "}
-              <span className="gradient-text">Certification Body</span>
+              Pass every witness audit. Never miss a renewal.{" "}
+              <span className="gradient-text">Stop chasing signatures.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-              Certiva replaces your spreadsheets, email chains, and manual document assembly with a complete operations platform — audit lifecycle, AI-powered document generation, real-time digital signing, CRM, client and auditor portals, and full accreditation compliance. Built inside a real accredited CB.
+              Certification bodies lose accreditation findings to skipped steps, missing signatures, and undocumented decisions. Certiva enforces the correct process structurally &mdash; every gate checked, every document assembled from live data, every signature in the right order with a complete record. One system replaces the spreadsheets, email chains, separate training software, and manual PDF assembly.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact" className="rounded-full bg-[var(--certiva-green)] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)]">
@@ -100,14 +100,14 @@ export default function HomePage() {
             className="mt-20 grid grid-cols-2 gap-6 sm:grid-cols-4"
           >
             {[
-              { end: 14, suffix: "", label: "Workflow Phases" },
-              { end: 8, suffix: "+", label: "ISO Standards" },
+              { end: 15, suffix: "+", label: "FR Forms Auto-Generated" },
+              { end: 8, suffix: "", label: "ISO Standards Supported" },
               { end: 100, suffix: "%", label: "Digital Signing" },
-              { end: 0, suffix: "", label: "Built-in CRM", display: "CRM" },
+              { end: 1, suffix: "", label: "System Replaces 5 Tools" },
             ].map((s) => (
               <motion.div key={s.label} variants={fadeUp} className="text-center">
                 <p className="text-3xl font-black text-white" style={{ textShadow: "0 0 20px rgba(82,194,122,0.4)" }}>
-                  {s.display ?? <AnimatedCounter end={s.end} suffix={s.suffix} />}
+                  <AnimatedCounter end={s.end} suffix={s.suffix} />
                 </p>
                 <p className="mt-1 text-xs font-medium uppercase tracking-widest text-gray-400">{s.label}</p>
               </motion.div>
@@ -147,10 +147,10 @@ export default function HomePage() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
             <motion.div variants={fadeUp}><SectionBadge dark>Platform</SectionBadge></motion.div>
             <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-white">
-              Every phase. Every document.{" "}<span className="gradient-text">Every signature.</span>
+              What changes when you{" "}<span className="gradient-text">stop doing it manually.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-gray-300">
-              From client intake to issued certificate — Certiva handles the entire certification lifecycle in a single system. Your document templates, your workflow, your rules.
+              Every outcome below is something certification bodies currently handle with spreadsheets, email, and manual effort &mdash; and something that can go wrong at your next witness audit.
             </motion.p>
           </motion.div>
           <motion.div
@@ -187,21 +187,21 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-[var(--bg-dark)] py-24">
         <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeUp}><SectionBadge dark>Artificial Intelligence</SectionBadge></motion.div>
+            <motion.div variants={fadeUp}><SectionBadge dark>Outcomes</SectionBadge></motion.div>
             <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-white">
-              AI that knows certification —{" "}<span className="gradient-text">not just your calendar</span>
+              Hours of manual work,{" "}<span className="gradient-text">done in minutes.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-gray-300 leading-relaxed">
-              Generic tools don&apos;t understand scope codes, audit time rules, or why a multi-site information security audit needs different planning than a small quality management review. Certiva&apos;s AI does.
+              Complete audit reports drafted in your template and ready for review. Documents pre-checked against your accreditation body&apos;s rules before submission. Correct audit days calculated and defensible. AI is how &mdash; faster cycles, fewer findings, and less rework is the result.
             </motion.p>
             <motion.ul variants={stagger} className="mt-6 space-y-3">
               {[
-                "AI audit report generation — draft complete stage reports from audit data",
-                "AI report review and control — cross-check reports against scope and findings",
-                "AI audit plan generation — populate plans from client scope and team assignments",
-                "Non-applicable clause identification from scope and standard combination",
-                "Audit time calculation compliant with IAF MD 5 rules and K-factors",
-                "Auditor qualification coverage validation before scheduling",
+                "Complete audit reports drafted from audit data \u2014 in your template, ready for review",
+                "Reports pre-checked against your accreditation body\u2019s rules before submission",
+                "Correct clause exclusions in seconds instead of 30\u201360 minutes",
+                "IAF MD 5 audit days calculated and defensible, every time",
+                "Scope coverage gaps flagged before you schedule \u2014 not at the witness audit",
+                "Auditor qualifications extracted from CVs automatically",
               ].map((item) => (
                 <motion.li key={item} variants={fadeUp} className="flex items-start gap-3 text-sm text-gray-300">
                   <span className="mt-0.5 text-[var(--certiva-glow)]">&#x2713;</span>
@@ -231,25 +231,22 @@ export default function HomePage() {
               <span className="ml-2 text-xs text-gray-500">AI Output</span>
             </div>
             <pre className="whitespace-pre-wrap text-gray-400 leading-6">
-{`> Generating audit plan...
-  Standard: ISO 27001:2022
-  Company: 45 employees
-  Scope: IT Services
-  Risk level: High
+{`> Generating Stage 2 report...
+  Client: Apex Manufacturing Ltd
+  Standards: ISO 9001 + ISO 14001 (integrated)
+  Audit days: 4.0 (Stage 2)
 
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Non-applicable clauses: 4 identified
-  Clauses excluded with justification
+`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Evidence extracted from 23 documents
+`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Findings placed into template cells
+`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Conclusion checkboxes set
+`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Safety check: no leaked names, no placeholders
 
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Recommended audit time: 3.5 days
-  Stage 1: 1.0 day · Stage 2: 2.5 days
-  K-factor: 1.2 (high risk applied)
+> Report review (TÜRKAK profile)...
+`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` All mandatory clauses covered
+`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` NC classification correct
+`}<span className="text-yellow-400">&#x26A0;</span>{` Finding depth: Clause 8.1 needs detail
 
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Team coverage: VALID
-  Lead auditor: qualified
-  Technical expert: qualified
-
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Audit report draft: GENERATED
-  12 pages · scope-aligned · ready for review`}
+Report ready for lead auditor review.`}
             </pre>
           </motion.div>
         </div>
@@ -288,14 +285,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Problems We Solve ─────────────────────────────────────────── */}
+      {/* ── The Cost of Doing It the Old Way ──────────────────────────── */}
       <section className="bg-gray-50 py-24">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
-            <motion.div variants={fadeUp}><SectionBadge>Why CBs Switch</SectionBadge></motion.div>
+            <motion.div variants={fadeUp}><SectionBadge>Without Certiva</SectionBadge></motion.div>
             <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-gray-900">
-              The problems that keep CB managers up at night.{" "}
-              <span className="text-[var(--certiva-green)]">Solved.</span>
+              The cost of doing it the old way.{" "}
+              <span className="text-[var(--certiva-green)]">Every one is a real risk.</span>
             </motion.h2>
           </motion.div>
           <motion.div
@@ -385,7 +382,7 @@ export default function HomePage() {
               <span className="text-[var(--certiva-green)]">Their entire product is our smallest feature.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-gray-600">
-              Most &ldquo;certification management&rdquo; software is a client database with a calendar bolted on. They don&apos;t generate your documents. They don&apos;t enforce signing chains. They don&apos;t calculate audit times. They don&apos;t validate committee coverage. Certiva does all of that — and yes, it has a CRM too.
+              Most &ldquo;certification management&rdquo; software is a client database with a calendar bolted on. They don&apos;t generate your documents. They don&apos;t enforce signing chains. They don&apos;t calculate audit times. They don&apos;t validate committee coverage. Certiva does all of that &mdash; and yes, it has a CRM too.
             </motion.p>
           </motion.div>
           <motion.div
@@ -393,14 +390,14 @@ export default function HomePage() {
             className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
           >
             {[
-              { title: "Online Application", desc: "Clients apply through a branded self-service portal with scope, standards, and company details." },
-              { title: "Real-Time Signing", desc: "Visual signature placement in the browser. Role-gated chains. Flattened signed PDFs with timestamps." },
-              { title: "Audit Package Builder", desc: "Complete audit packages assembled automatically — plans, team forms, reports, NC forms, meeting forms." },
-              { title: "Consultant Portal", desc: "Read-only access for referred consultants to track their clients through the pipeline." },
-              { title: "Built-in CRM", desc: "Client management, contact tracking, pipeline overview — the feature other platforms call their whole product." },
-              { title: "Auditor Management", desc: "Qualifications, scope codes, experience tracking, witness schedules. Coverage validated before every audit." },
-              { title: "NC Workflow", desc: "Stage-specific nonconformity tracking with evidence upload, auditor review, and closure gates." },
-              { title: "Certificate Lifecycle", desc: "Issue, renew, suspend, withdraw. Full certificate history with expiry tracking and surveillance scheduling." },
+              { title: "Online Application", desc: "Clients apply through a branded form \u2014 no login needed. On submit, the audit set creates itself, stages are provisioned, and the client gets a portal account." },
+              { title: "Document Generation", desc: "15+ FR forms filled from live data into your own Word templates. Company details, scope, dates, team, EA codes \u2014 all populated automatically." },
+              { title: "Digital Signing", desc: "Visual signatures placed in-browser with enforced order. Signed PDFs flattened with name, timestamp, and IP. Meeting attendees sign via email token \u2014 no account needed." },
+              { title: "NC Management", desc: "Nonconformities raised, tracked, and closed with full evidence trail. Auto-computed due dates. A stage can\u2019t advance with open NCs." },
+              { title: "Training Academy", desc: "Built-in courses with PDF/video material, timed exams, automatic scoring. Unlimited users, no per-seat fees. No separate tool needed." },
+              { title: "AI Intelligence", desc: "Reports drafted and reviewed by AI. Audit days calculated. Clause exclusions suggested. All reviewable and overridable." },
+              { title: "Auditor Management", desc: "Qualifications, EA codes, witness records. Scope coverage validated before every audit. Double-booking prevented." },
+              { title: "Built-in CRM", desc: "Pipeline by phase, consultant referrals, finance overview \u2014 the feature other platforms call their whole product." },
             ].map((item) => (
               <motion.div
                 key={item.title}
@@ -425,7 +422,7 @@ export default function HomePage() {
               <span className="gradient-text">nothing to flag.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-4 text-gray-300">
-              Certiva gives certification bodies the infrastructure to run correctly — every time, for every standard, for every client.
+              One system. Every standard. Every document. Every signature. Every proof your accreditation body will ask for &mdash; already recorded, in order.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">
               <Link href="/contact" className="rounded-full bg-[var(--certiva-green)] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)]">
@@ -453,11 +450,12 @@ export default function HomePage() {
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Contact for pricing" },
             featureList: [
               "ISO audit lifecycle management",
-              "AI-powered report and plan generation",
+              "AI-powered report generation and review",
               "Digital signature workflows",
               "Committee review management",
               "Multi-standard support",
               "Auditor witness tracking",
+              "Built-in training academy",
               "Built-in CRM",
             ],
           }),

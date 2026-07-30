@@ -13,121 +13,149 @@ const TABS = [
   {
     id: "workflow",
     label: "Audit Workflow",
-    title: "14-phase lifecycle with enforced gates",
+    title: "The correct process, enforced — not just documented",
     bullets: [
-      "Application → Quotation → Agreement → Document Review → Stage 1 → Stage 2 → Committee → Certificate",
-      "Each phase transition is gated — no skipping steps, no missing documents",
-      "Planners see what needs scheduling, auditors see pending fieldwork, CMs see pending decisions",
-      "Full status history with timestamps for every transition",
-      "Surveillance and re-certification follow adapted flows with stage skipping where accreditation allows",
+      "State machine enforces the full path: application → planning → quotation → agreement → internal review (FR.218) → Stage 1 → Stage 2 → committee → certificate",
+      "Stage 1 is gated: cannot start until the audit programme is signed, impartiality declarations are signed, and the client has signed the audit plan",
+      "Stage 2 is gated: Stage 1 report must be approved and all Stage 1 NCs closed before proceeding",
+      "Certificate is gated: decision record must be complete and every NC closed",
+      "Every transition logged to an immutable, timestamped event log — full traceability at any point",
+      "Without this: a planner skips a step, and it surfaces as a nonconformity at your next witness audit",
     ],
   },
   {
     id: "documents",
     label: "Documents",
-    title: "Every audit form, auto-generated",
+    title: "15+ FR forms from live data — in your templates, not a generic form",
     bullets: [
-      "Initial assessment reviews, audit programmes, audit plans",
-      "Opening/closing meeting forms with employee roster integration",
-      "Stage 1 and Stage 2 reports — pre-filled with auditor data",
-      "Review & decision forms — committee names, scope codes, and signature slots",
-      "Export as DOCX for editing or download signed PDFs with embedded signatures",
+      "Generates FR.218 (application review), FR.220 (quotation), FR.221 (agreement), FR.222 (audit programme), FR.223 (audit plan), FR.224 (impartiality declarations), FR.225 (meeting form), FR.230 (NC notice), FR.231/232/229 (reports), FR.233 (decision form), FR.211 (auditor assessment)",
+      "Every form pre-filled from live audit-set data: company details, scope, dates, team, EA codes, man-days",
+      "Fills your CB\u2019s own Word templates — your branding, your layout, not a generic form",
+      "Export as DOCX for editing or as signed PDF with embedded signatures",
+      "Without this: manual find-and-replace across a dozen forms per audit, every single time",
     ],
   },
   {
     id: "signing",
     label: "Signing",
-    title: "Role-gated digital signatures",
+    title: "Every signature in the right order, with a complete record",
     bullets: [
-      "Every document has defined signing slots: Lead Auditor → Appointed Reviewer → Committee → CM",
-      "Visual signature placement in an in-browser PDF viewer",
-      "Signatures include name, IP address, and timestamp",
-      "Download flattened PDFs with burned-in signature images",
-      "No external signing tools — everything happens inside Certiva",
+      "In-browser PDF viewer with visual signature placement — draw or upload your signature",
+      "Enforced signing order: Lead Auditor → Appointed Reviewer → Committee → Certification Manager",
+      "Out-of-turn signing is blocked — the system enforces the sequence",
+      "Signed PDFs are flattened with signature image, signer name, timestamp, and IP address burned in",
+      "Meeting attendees (FR.225) sign via emailed token with email OTP — no Certiva account needed",
+      "Without this: weeks chasing signatures by email, and no reliable answer to \u201Cwho signed when?\u201D",
     ],
   },
   {
     id: "committee",
     label: "Committee",
-    title: "Certification committee management",
+    title: "Impartial, qualified committees — enforced, not assumed",
     bullets: [
-      "Appoint committee members from your qualified auditor pool",
-      "System validates EA code and standard coverage for the audit scope",
-      "Dynamic signature keys: each member gets their own signing slot",
-      "Certification manager is blocked until all committee members have signed",
-      "Review & Decision Form tracks all signatures and shows real-time status",
+      "System helps appoint committee members from your qualified auditor pool",
+      "Enforces coverage: committee must collectively cover every standard and EA code in scope",
+      "Enforces impartiality: no committee member may have been on the audit team",
+      "Each member gets a dedicated signing slot on the decision form",
+      "Certification manager is blocked until every committee member has signed",
+      "Without this: manual tracking risks an impartiality breach at your highest-stakes decision point",
+    ],
+  },
+  {
+    id: "nc",
+    label: "NC Management",
+    title: "Every nonconformity tracked to closure — nothing slips",
+    bullets: [
+      "Lead auditor raises NCs per stage (minor / major / critical) with auto-computed due dates",
+      "Client uploads root-cause analysis and corrective-action evidence directly in the portal",
+      "Auditor reviews and closes or rejects; rejected NCs go another round with full per-round history preserved",
+      "NC closure gates the workflow — a stage cannot advance while NCs remain open",
+      "Without this: NCs live in spreadsheets and email threads, with no reliable proof of closure for your accreditation file",
     ],
   },
   {
     id: "ai",
     label: "AI",
-    title: "AI that understands ISO certification",
+    title: "Hours of manual work, done in minutes — AI handles the heavy lifting",
     bullets: [
-      "Non-applicable clause generation from client scope and standard combination",
-      "IAF MD 5-compliant audit time calculation with K-factor support",
-      "EA code and scope coverage validation before scheduling",
-      "Risk level classification using scope keywords, EA code, and organization size",
-      "Every AI output is reviewable and overridable by the planner",
+      "AI report generation: a multi-stage pipeline writes complete Stage 1/2 reports in your template, including coordinate-based assembly into exact cells. Safety checks block leaked names or unfilled placeholders.",
+      "AI report review: checks against your accreditation-body rule profile (e.g. UAF/T\u00DCRKAK) and returns typed findings as real inline comments in the Word document",
+      "Audit time calculator: deterministic IAF MD 5 engine — not guesswork. Planners can override with justification logged.",
+      "Non-applicable clause suggestions: AI suggests from a system-approved candidate list, planner confirms each one",
+      "Auditor scope coverage: deterministic rule-checking of team EA codes against audit requirements before scheduling",
     ],
   },
   {
     id: "client",
     label: "Client Portal",
-    title: "Self-service client experience",
+    title: "Clients self-serve — your CB stops being a call center",
     bullets: [
-      "Clients submit applications with scope, standards, and company details",
-      "Digital agreement signing through the in-browser viewer",
-      "Document status tracking — clients see which documents await their signature",
-      "NC response workflow — upload corrective actions, track closure",
-      "Employee roster management for meeting form signatures",
+      "Branded portal where clients apply, sign documents, and track audit status on a visual timeline",
+      "Document signing is order-gated — clients see \u201Cawaiting CB signature\u201D until the CB signs first",
+      "NC response workflow: upload corrective actions and see review history per round",
+      "Rate auditors on the assessment form (FR.211) after each audit",
+      "Manage the employee roster for meeting-form signatures (FR.225)",
+      "Without this: every status question becomes an email or phone call to your team",
     ],
   },
   {
     id: "auditor",
     label: "Auditor Portal",
-    title: "Focused auditor workspace",
+    title: "Auditors see exactly what needs their action",
     bullets: [
-      "Dashboard shows only assigned audit sets and pending signatures",
-      "Upload stage reports, NC forms, and audit evidence",
-      "NC decision submission per stage (no NC / NC items with categories)",
-      "Sign documents through the visual signature viewer",
-      "View audit plan details, team composition, and scheduled dates",
+      "Dashboard shows only assigned audits and documents pending signature — no clutter",
+      "Upload audit plans, meeting forms, reports, and supporting evidence",
+      "Submit NC decisions per stage: no NC, or NC items with category and details",
+      "Sign impartiality declarations and reports through the in-browser signature viewer",
+    ],
+  },
+  {
+    id: "training",
+    label: "Training Academy",
+    title: "Auditor training inside Certiva — no separate tool, no per-seat fees",
+    bullets: [
+      "Create courses with PDF or video material and separate exams — all managed in one place",
+      "Controlled document viewer tracks pages read and blocks completion until material is fully consumed",
+      "Timed multiple-choice exams with a server-authoritative timer — auto-submits on expiry, cannot be beaten by refreshing",
+      "Automatic scoring with configurable passing grade, and stored results for every attempt",
+      "Assign courses to any number of users with no seat limit — training scales with your team",
+      "Without this: paying thousands for standalone training software with per-seat caps and a separate login",
     ],
   },
   {
     id: "compliance",
     label: "Compliance",
-    title: "Accreditation-ready infrastructure",
+    title: "When your accreditation body asks, it\u2019s already there",
     bullets: [
-      "IAF MD 5 audit time calculations with K-factor for risk adjustment",
-      "Multiple accreditation body rule sets supported",
-      "Standard-specific scope systems: EA codes (QMS/EMS/OHSMS), ISMS categories (27001), food chain (22000), medical device (13485)",
-      "Full audit trail — every signature, status change, and document version logged",
-      "Auditor qualification tracking: per-standard EA codes, scope categories, technical depth",
+      "Every workflow transition, document release, signature, and status change is timestamped and stored as an in-app record",
+      "Client and CB communicate in a logged, in-app message thread — conversations stay with the audit file",
+      "IAF MD 5 audit time calculations built in, with K-factor risk adjustments",
+      "Standard-specific scope systems: EA codes, ISMS categories (27001), food chain categories (22000), medical device areas (13485)",
+      "Auditor qualification tracking per standard — EA codes, scope categories, and technical depth recorded",
     ],
   },
   {
     id: "crm",
     label: "CRM",
-    title: "Built-in client relationship management",
+    title: "Your certificate portfolio on one screen — never lose a renewal",
     bullets: [
-      "Client database with contact details, scope, standards, and audit history",
-      "Pipeline overview — see every active audit set and its current phase",
-      "Consultant referral tracking — consultants see their referred clients' progress",
-      "Finance overview for CRM staff — quotation values, payment status",
-      "The feature that other platforms call their entire product",
+      "Pipeline view by phase with consultant referral tracking and fee/finance figures",
+      "Certificate states tracked: active, expiring, expired, suspended, withdrawn",
+      "Surveillance and renewal countdowns with overdue audits flagged automatically",
+      "Payment status tracking and Excel export for finance reporting",
+      "Client database with contact details, scope, standards, and full audit history",
     ],
   },
   {
     id: "applications",
     label: "Applications",
-    title: "Online client applications",
+    title: "Clients apply online — the job starts itself",
     bullets: [
-      "Branded self-service application portal for new certification requests",
-      "Clients select standards, enter company details, and submit scope descriptions",
-      "Applications land directly in the planner's queue — no re-entry required",
-      "Automatic audit set creation from approved applications",
-      "Multi-standard applications supported (e.g. integrated QMS + EMS + OHSMS)",
+      "Public, branded self-service form — no login required to apply",
+      "Clients select standards, enter company details, and fill standard-specific fields (IAF MD 5 personnel breakdown, ISO-specific inputs)",
+      "Consultant referral code support — track which consultants bring which clients",
+      "On submit: creates audit set, auto-creates stages, provisions client portal account, and drops the application into the planner\u2019s queue",
+      "Without this: applications arrive by email, require manual re-entry, and introduce transcription errors",
     ],
   },
 ];
@@ -143,10 +171,10 @@ export default function FeaturesPage() {
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <SectionBadge dark>Platform</SectionBadge>
           <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
-            Every feature your CB needs
+            What changes when your CB runs on Certiva
           </h1>
           <p className="mt-4 text-lg text-gray-300">
-            Deep-dive into each capability. Click a tab to explore.
+            Not a feature list — the outcomes each capability delivers, and what not having it costs.
           </p>
         </div>
       </section>
@@ -189,7 +217,7 @@ export default function FeaturesPage() {
                 ))}
               </ul>
             </div>
-            {/* Screenshot placeholder */}
+            {/* Screenshot placeholder — Replace with actual product screenshot — {active.id} view */}
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
               <div className="flex items-center gap-2 border-b border-gray-200 pb-3">
                 <div className="h-2.5 w-2.5 rounded-full bg-red-300" />

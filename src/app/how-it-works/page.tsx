@@ -25,10 +25,10 @@ export default function HowItWorksPage() {
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <SectionBadge dark>Workflow</SectionBadge>
           <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
-            14 phases. Nothing skipped.
+            Every step enforced. Every gate checked. Nothing left for your accreditation body to find.
           </h1>
           <p className="mt-4 text-lg text-gray-300">
-            The complete ISO certification lifecycle — from client application to issued certificate.
+            The full certification lifecycle runs as a state machine with real gates. Phase transitions are role-checked and logged. Nobody can skip a step — and every phase has a complete, ordered paper trail.
           </p>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function HowItWorksPage() {
             ))}
           </motion.div>
           <p className="mt-8 text-center text-sm text-gray-600">
-            Surveillance and re-certification cycles follow an adapted flow — Stage 1 optional, committees required for major decisions.
+            Surveillance and recertification follow adapted flows with their own gates. Every cycle adds to the same continuous audit trail — so when your accreditation body asks for proof of any decision, it's already there.
           </p>
           <div className="mt-8 text-center">
             <Link href="/contact" className="rounded-full bg-[var(--certiva-green)] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)]">
