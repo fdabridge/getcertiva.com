@@ -1,3 +1,9 @@
+import { BATCH_1 } from "./blog-batch-1";
+import { BATCH_2 } from "./blog-batch-2";
+import { BATCH_3 } from "./blog-batch-3";
+import { BATCH_4 } from "./blog-batch-4";
+import { BATCH_5 } from "./blog-batch-5";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -2673,5 +2679,10 @@ These insights drive continuous improvement in the CB's operations.
 ## Ready to eliminate status blindness in your certification body?
 
 Book a demo at getcertiva.com and see how Certiva's real-time pipeline dashboard gives every stakeholder the visibility they need to work effectively.`
-  }
+  },
+  ...BATCH_1,
+  ...BATCH_2,
+  ...BATCH_3,
+  ...BATCH_4,
+  ...BATCH_5,
 ];
