@@ -7,6 +7,7 @@ const PLATFORM_LINKS = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Blog", href: "/blog" },
+  { label: "Talking Script", href: "/talking-script" },
 ];
 
 const STANDARDS = [
