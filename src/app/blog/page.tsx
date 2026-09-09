@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Blog — Certiva ISO Certification Insights",
   description:
     "Guides and analysis for ISO certification body professionals. Accreditation compliance, audit management, AI, digital transformation.",
-  alternates: { canonical: "https://getcertiva.com/blog" },
+  alternates: { canonical: "https://www.getcertiva.com/blog" },
 };
 
 const categoryColors: Record<string, string> = {

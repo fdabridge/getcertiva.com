@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Certiva — AI-Powered ISO Certification Management",
   description: "End-to-end audit platform for ISO certification bodies. 14-phase lifecycle, AI document generation, digital signing, accreditation compliance.",
-  metadataBase: new URL("https://getcertiva.com"),
+  metadataBase: new URL("https://www.getcertiva.com"),
   icons: {
     icon: "/logo-icon.svg",
     shortcut: "/logo-icon.svg",

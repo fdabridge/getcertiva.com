@@ -444,7 +444,7 @@ Report ready for lead auditor review.`}
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "Certiva",
-            url: "https://getcertiva.com",
+            url: "https://www.getcertiva.com",
             applicationCategory: "BusinessApplication",
             description: "AI-powered ISO certification management platform for accredited certification bodies. ISO/IEC 17021-1 compliant.",
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD", description: "Contact for pricing" },

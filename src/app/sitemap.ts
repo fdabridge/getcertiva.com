@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://getcertiva.com";
+  const base = "https://www.getcertiva.com";
   const now = new Date();
 
   const staticRoutes = [

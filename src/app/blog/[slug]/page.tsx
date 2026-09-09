@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${post.title} | Certiva`,
     description: post.excerpt,
-    alternates: { canonical: `https://getcertiva.com/blog/${post.slug}` },
+    alternates: { canonical: `https://www.getcertiva.com/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
