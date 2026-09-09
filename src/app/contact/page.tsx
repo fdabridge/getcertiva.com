@@ -5,6 +5,7 @@ import DemoForm from "@/components/DemoForm";
 export const metadata: Metadata = {
   title: "Book a Demo — Certiva ISO Certification Management",
   description: "Request a live demo of Certiva tailored to your standards and accreditation requirements.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
