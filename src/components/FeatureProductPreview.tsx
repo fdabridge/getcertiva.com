@@ -116,7 +116,17 @@ function Pill({ children, tone = "green" }: { children: React.ReactNode; tone?: 
 }
 
 function WorkflowPreview() {
-  const steps = ["Application", "Planning", "Quotation", "Agreement", "Document review", "Stage 1", "Stage 2", "Committee", "Certified"];
+  const steps = [
+    ["Application", "9 Sep 2025"],
+    ["Planning", "10 Sep 2025"],
+    ["Quotation", "12 Sep 2025"],
+    ["Agreement", "15 Sep 2025"],
+    ["Document review", "15 Sep 2025"],
+    ["Stage 1", "14 Oct 2025"],
+    ["Stage 2", "25 Nov 2025"],
+    ["Committee", "2 Dec 2025"],
+    ["Certified", "15 Dec 2025"],
+  ];
   return (
     <AppFrame active="Clients">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -126,10 +136,10 @@ function WorkflowPreview() {
       <div className="mt-4 rounded-lg border border-gray-200 bg-white p-4">
         <div className="flex items-center justify-between"><p className="text-[9px] font-bold text-gray-700">Workflow progress</p><span className="text-[8px] font-semibold text-emerald-700">All gates cleared</span></div>
         <div className="mt-4 grid grid-cols-3 gap-3">
-          {steps.map((step, index) => (
+          {steps.map(([step, date]) => (
             <div key={step} className="flex min-w-0 items-center gap-2">
               <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-700 text-white"><Check size={10} strokeWidth={3} /></span>
-              <div><p className="truncate text-[9px] font-semibold text-gray-700">{step}</p><p className="text-[7px] text-gray-400">{index + 9} Sep–Dec 2025</p></div>
+              <div><p className="truncate text-[9px] font-semibold text-gray-700">{step}</p><p className="text-[7px] text-gray-400">{date}</p></div>
             </div>
           ))}
         </div>
@@ -144,11 +154,11 @@ function WorkflowPreview() {
 }
 
 const LIVE_DOCUMENTS = [
-  ["Certification Quotation", "FR.220", "Signed 12 Sep"],
-  ["Certification Agreement", "FR.221", "Signed 15 Sep"],
-  ["Audit Plan — Stage 1", "FR.223", "Signed 25 Sep"],
-  ["Opening / Closing Meeting", "FR.225", "Signed 14 Oct"],
-  ["ISO 9001 Certificate", "Certificate", "Awaiting signature"],
+  ["Certification Quotation", "FR.220", "Signed 12 Sep", "11 Sep 2025"],
+  ["Certification Agreement", "FR.221", "Signed 15 Sep", "12 Sep 2025"],
+  ["Audit Plan — Stage 1", "FR.223", "Signed 25 Sep", "24 Sep 2025"],
+  ["Opening / Closing Meeting", "FR.225", "Signed 14 Oct", "13 Oct 2025"],
+  ["ISO 9001 Certificate", "Certificate", "Awaiting signature", "15 Dec 2025"],
 ];
 
 function DocumentsPreview() {
@@ -156,10 +166,10 @@ function DocumentsPreview() {
     <AppFrame role="client" active="Documents">
       <div><Eyebrow>Client portal</Eyebrow><h3 className="mt-1 text-base font-bold text-gray-950">Documents</h3><p className="mt-1 text-[9px] text-gray-500">Documents shared with you by Certiva</p></div>
       <div className="mt-4 space-y-2">
-        {LIVE_DOCUMENTS.map(([name, form, status], index) => (
+        {LIVE_DOCUMENTS.map(([name, form, status, received], index) => (
           <div key={name} className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3">
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-700"><FileText size={14} /></span>
-            <div className="min-w-0 flex-1"><p className="truncate text-[10px] font-bold text-gray-800">{name} <span className="font-medium text-gray-400">({form})</span></p><p className="mt-0.5 text-[8px] text-gray-400">Received {11 + index * 4} September 2025</p></div>
+            <div className="min-w-0 flex-1"><p className="truncate text-[10px] font-bold text-gray-800">{name} <span className="font-medium text-gray-400">({form})</span></p><p className="mt-0.5 text-[8px] text-gray-400">Received {received}</p></div>
             <Pill tone={index === LIVE_DOCUMENTS.length - 1 ? "amber" : "green"}>{status}</Pill>
             <span className="hidden rounded border border-emerald-800 px-2 py-1 text-[8px] font-bold text-emerald-800 md:block">{index === LIVE_DOCUMENTS.length - 1 ? "Open to Sign" : "Open"}</span>
           </div>
