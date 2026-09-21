@@ -1,74 +1,68 @@
 "use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { GitBranch, Sparkles, FileText, PenLine, Users, ShieldCheck, AlertTriangle, CalendarCheck, MessageSquare, BookOpen, ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight, FileCheck2, GitBranch, ShieldCheck, Sparkles } from "lucide-react";
 import GradientOrbs from "@/components/GradientOrbs";
 import SectionBadge from "@/components/SectionBadge";
 import ProductShowcase, { HeroProductPreview } from "@/components/ProductShowcase";
 import { CertivAIProductPreview } from "@/components/FeatureProductPreview";
-import { FEATURES, COMPARISON, WORKFLOW_STEPS } from "@/lib/constants";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  },
 };
+
 const stagger = { visible: { transition: { staggerChildren: 0.08 } } };
 
-const ICONS: Record<string, React.ElementType> = {
-  GitBranch, Sparkles, FileText, PenLine, Users, ShieldCheck,
-};
+const OUTCOMES = [
+  {
+    icon: GitBranch,
+    label: "Controlled workflow",
+    title: "Every gate happens in the right order.",
+    copy: "Applications, planning, audits, reviews, decisions, certificates, and surveillance stay in one enforced lifecycle.",
+  },
+  {
+    icon: FileCheck2,
+    label: "Complete record",
+    title: "The document is already where it belongs.",
+    copy: "Your forms are generated from live data. Signatures, findings, evidence, and approvals remain attached to the same record.",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Audit-ready evidence",
+    title: "When the accreditation body asks, the proof is there.",
+    copy: "Qualifications, impartiality, audit time, committee coverage, and every timestamp are retained and reviewable.",
+  },
+] as const;
 
-const STANDARDS_DISPLAY = [
-  { code: "ISO 9001", name: "Quality Management", desc: "The world's most widely used management system standard." },
-  { code: "ISO 14001", name: "Environmental Management", desc: "Environmental impact reduction and compliance." },
-  { code: "ISO 45001", name: "Occupational Health & Safety", desc: "Workplace safety and risk prevention." },
-  { code: "ISO 27001", name: "Information Security", desc: "Data protection and cybersecurity management." },
-  { code: "ISO 22000", name: "Food Safety Management", desc: "Food chain safety from farm to fork." },
-  { code: "ISO 13485", name: "Medical Devices", desc: "Quality systems for medical device manufacturers." },
-  { code: "ISO 37001", name: "Anti-Bribery", desc: "Anti-corruption and bribery prevention." },
-  { code: "ISO 50001", name: "Energy Management", desc: "Energy efficiency and consumption optimization." },
-];
+const AI_OUTCOMES = [
+  "Draft complete audit reports in your own template",
+  "Calculate defensible audit days and clause exclusions",
+  "Flag missing coverage and report gaps before submission",
+] as const;
 
-const PROBLEMS = [
-  {
-    icon: AlertTriangle,
-    title: "Skipped steps surface at witness audits",
-    desc: "A planner forgets to get impartiality declarations signed before Stage 1. A document goes missing between stages. You don\u2019t find out until the accreditation body does \u2014 at your witness audit.",
-  },
-  {
-    icon: FileText,
-    title: "Manual reports drift in quality",
-    desc: "Each auditor writes reports differently. Some miss mandatory clauses, others misclassify NCs. Without automated review, these problems reach the accreditation body as findings against your CB.",
-  },
-  {
-    icon: PenLine,
-    title: "Weeks chasing signatures",
-    desc: "The lead auditor signed, but the reviewer is travelling. The committee member hasn\u2019t seen the document. Nobody knows who signed what, or when. Print, scan, email, repeat.",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Missed surveillance = suspended certificate",
-    desc: "Surveillance dates anchored to the Stage 2 audit, tracked yearly across dozens of clients. One missed window, and the certificate is suspended. Was it in someone\u2019s calendar? A spreadsheet row?",
-  },
-  {
-    icon: BookOpen,
-    title: "Separate training software, per-seat fees",
-    desc: "You\u2019re already paying for certification management tools, a CRM, and document storage. Now add a standalone LMS with per-seat pricing for auditor training. Five systems, five logins, five invoices.",
-  },
-  {
-    icon: MessageSquare,
-    title: "No proof when the accreditation body asks",
-    desc: "The AB asks: \u2018Show me the communication trail for this client\u2019s Stage 1 delay.\u2019 You search email threads, shared drives, and chat histories. The proof exists \u2014 somewhere. Maybe.",
-  },
-];
+const STANDARDS = [
+  "ISO 9001",
+  "ISO 14001",
+  "ISO 45001",
+  "ISO 27001",
+  "ISO 22000",
+  "ISO 13485",
+  "ISO 37001",
+  "ISO 50001",
+] as const;
 
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[var(--bg-dark)] pb-24 pt-28 lg:min-h-screen lg:pb-20 lg:pt-32">
+      <section className="relative overflow-hidden bg-[var(--bg-dark)] pb-20 pt-28 lg:pb-24 lg:pt-32">
         <GradientOrbs />
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="text-center lg:text-left">
             <motion.div variants={fadeUp}>
               <SectionBadge dark>Built Inside a Certification Body</SectionBadge>
@@ -77,26 +71,30 @@ export default function HomePage() {
               variants={fadeUp}
               className="mt-7 text-[clamp(2.7rem,5.2vw,4.8rem)] font-black leading-[0.97] tracking-[-0.045em] text-white"
             >
-              Run the certification.{" "}
-              <span className="gradient-text">Keep the proof.</span>
+              Run the certification. <span className="gradient-text">Keep the proof.</span>
             </motion.h1>
-            <motion.p variants={fadeUp} className="mx-auto mt-6 max-w-xl text-base leading-8 text-gray-300 lg:mx-0 lg:text-lg">
-              One controlled system for every application, audit, report, signature, decision, certificate, surveillance cycle, and competence record.
+            <motion.p
+              variants={fadeUp}
+              className="mx-auto mt-6 max-w-xl text-base leading-8 text-gray-300 lg:mx-0 lg:text-lg"
+            >
+              One controlled system for the complete certification lifecycle—from application and audit to decision, certificate, and surveillance.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-              <Link href="/contact" className="rounded-full bg-[var(--certiva-green)] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)] hover:shadow-[0_0_30px_rgba(82,194,122,0.18)]">
+              <Link
+                href="/contact"
+                className="rounded-full bg-[var(--certiva-green)] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)] hover:shadow-[0_0_30px_rgba(82,194,122,0.18)]"
+              >
                 Book a Demo →
               </Link>
-              <Link href="#product" className="flex items-center gap-2 rounded-full border border-gray-600 px-7 py-3.5 text-sm font-semibold text-gray-300 transition hover:border-[var(--certiva-glow)] hover:text-white">
+              <Link
+                href="#product"
+                className="flex items-center gap-2 rounded-full border border-gray-600 px-7 py-3.5 text-sm font-semibold text-gray-300 transition hover:border-[var(--certiva-glow)] hover:text-white"
+              >
                 See the product <ArrowDown size={14} />
               </Link>
             </motion.div>
             <motion.div variants={fadeUp} className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
-              {[
-                ["14", "enforced phases"],
-                ["15+", "generated forms"],
-                ["8", "ISO standards"],
-              ].map(([value, label]) => (
+              {[["14", "enforced phases"], ["15+", "generated forms"], ["8", "ISO standards"]].map(([value, label]) => (
                 <div key={label}>
                   <p className="text-xl font-black text-white sm:text-2xl">{value}</p>
                   <p className="mt-1 text-[10px] font-semibold uppercase leading-4 tracking-[0.1em] text-gray-500">{label}</p>
@@ -109,122 +107,136 @@ export default function HomePage() {
             initial={{ opacity: 0, x: 36, scale: 0.98 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.75, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:pt-10"
           >
             <HeroProductPreview />
           </motion.div>
         </div>
       </section>
 
-      {/* ── Social proof ──────────────────────────────────────────────── */}
-      <section className="bg-[var(--certiva-mist)] py-8">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <p className="text-sm font-medium text-gray-600">
-            Built for certification bodies operating under ISO/IEC 17021-1:2015 — Conformity assessment — Requirements for bodies providing audit and certification of management systems
+      <section className="border-b border-emerald-100 bg-[var(--certiva-mist)] py-5">
+        <div className="mx-auto flex max-w-6xl items-center justify-center gap-3 px-6 text-center">
+          <ShieldCheck size={17} className="shrink-0 text-[var(--certiva-green)]" />
+          <p className="text-sm font-medium text-gray-700">
+            Purpose-built for certification bodies operating under ISO/IEC 17021-1.
           </p>
         </div>
       </section>
 
-      {/* ── Live product tour ───────────────────────────────────────── */}
-      <section id="product" className="scroll-mt-20 bg-white py-24 sm:py-28">
+      <section id="product" className="scroll-mt-20 bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={stagger} className="text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+            className="text-center"
+          >
             <motion.div variants={fadeUp}><SectionBadge>Working Product</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mx-auto mt-6 max-w-4xl text-[clamp(2rem,4.5vw,3.75rem)] font-black leading-[1.05] tracking-[-0.035em] text-gray-950">
-              Not a concept dashboard. A complete certification record.
+            <motion.h2
+              variants={fadeUp}
+              className="mx-auto mt-6 max-w-3xl text-[clamp(2rem,4.5vw,3.75rem)] font-black leading-[1.05] tracking-[-0.035em] text-gray-950"
+            >
+              One live record for the entire certification.
             </motion.h2>
             <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600">
-              These product views are rebuilt from Certiva&apos;s working demo environment, using synthetic companies and completed workflow records.
+              Explore product views rebuilt from Certiva&apos;s working demo environment using synthetic company data.
             </motion.p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.65 }} className="mt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.65 }}
+            className="mt-10"
+          >
             <ProductShowcase />
           </motion.div>
         </div>
       </section>
 
-      {/* ── Core Features ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[var(--bg-dark)] py-24">
+      <section className="relative overflow-hidden bg-[var(--bg-dark)] py-20 sm:py-24">
         <GradientOrbs />
         <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
-            <motion.div variants={fadeUp}><SectionBadge dark>Platform</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-white">
-              What changes when you{" "}<span className="gradient-text">stop doing it manually.</span>
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-gray-300">
-              Every outcome below is something certification bodies currently handle with spreadsheets, email, and manual effort &mdash; and something that can go wrong at your next witness audit.
-            </motion.p>
-          </motion.div>
           <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-            className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="max-w-3xl"
           >
-            {FEATURES.map((f) => {
-              const Icon = ICONS[f.icon];
-              return (
-                <motion.div
-                  key={f.title}
-                  variants={fadeUp}
-                  whileHover={{ y: -4 }}
-                  className="rounded-2xl border border-[rgba(26,71,49,0.5)] bg-[rgba(13,23,16,0.7)] p-6 backdrop-blur-[16px] transition-all hover:border-[rgba(82,194,122,0.3)] hover:shadow-[0_0_24px_rgba(82,194,122,0.1)]"
-                >
-                  <div className="flex items-center gap-3">
-                    {Icon && <Icon className="h-5 w-5 text-[var(--certiva-glow)]" />}
-                    <h3 className="text-lg font-bold text-white">{f.title}</h3>
-                    {"badge" in f && (
-                      <span className="rounded-full bg-[rgba(82,194,122,0.2)] px-2 py-0.5 text-[0.65rem] font-bold text-[var(--certiva-glow)]">
-                        {f.badge}
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-300">{f.desc}</p>
-                </motion.div>
-              );
-            })}
+            <motion.div variants={fadeUp}><SectionBadge dark>Why Certiva</SectionBadge></motion.div>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-white"
+            >
+              Less administration. <span className="gradient-text">Stronger control.</span>
+            </motion.h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={stagger}
+            className="mt-12 grid gap-5 lg:grid-cols-3"
+          >
+            {OUTCOMES.map((outcome) => (
+              <motion.article
+                key={outcome.title}
+                variants={fadeUp}
+                className="rounded-2xl border border-[rgba(82,194,122,0.18)] bg-[rgba(13,23,16,0.72)] p-6 backdrop-blur-[16px]"
+              >
+                <outcome.icon className="h-6 w-6 text-[var(--certiva-glow)]" />
+                <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--certiva-glow)]">{outcome.label}</p>
+                <h3 className="mt-2 text-xl font-bold leading-7 text-white">{outcome.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-gray-300">{outcome.copy}</p>
+              </motion.article>
+            ))}
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mt-9">
+            <Link href="/features" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--certiva-glow)] hover:underline">
+              Explore every capability <ArrowRight size={15} />
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* ── AI Spotlight ──────────────────────────────────────────────── */}
-      <section id="certivai" className="relative scroll-mt-20 overflow-hidden bg-[var(--bg-dark)] py-24">
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
+      <section id="certivai" className="scroll-mt-20 bg-[#f5f8f6] py-20 sm:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeUp}><SectionBadge dark>Outcomes</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-white">
-              Hours of manual work,{" "}<span className="gradient-text">done in minutes.</span>
+            <motion.div variants={fadeUp}><SectionBadge>CertivAI</SectionBadge></motion.div>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-gray-950"
+            >
+              Expert work, accelerated—not hidden.
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-4 text-gray-300 leading-relaxed">
-              Complete audit reports drafted in your template and ready for review. Documents pre-checked against your accreditation body&apos;s rules before submission. Correct audit days calculated and defensible. AI is how &mdash; faster cycles, fewer findings, and less rework is the result.
+            <motion.p variants={fadeUp} className="mt-5 text-base leading-7 text-gray-600">
+              CertivAI prepares the work and shows its reasoning. Your team reviews, changes, and approves every result.
             </motion.p>
-            <motion.ul variants={stagger} className="mt-6 space-y-3">
-              {[
-                "Complete audit reports drafted from audit data \u2014 in your template, ready for review",
-                "Reports pre-checked against your accreditation body\u2019s rules before submission",
-                "Correct clause exclusions in seconds instead of 30\u201360 minutes",
-                "IAF MD 5 audit days calculated and defensible, every time",
-                "Scope coverage gaps flagged before you schedule \u2014 not at the witness audit",
-                "Auditor qualifications extracted from CVs automatically",
-              ].map((item) => (
-                <motion.li key={item} variants={fadeUp} className="flex items-start gap-3 text-sm text-gray-300">
-                  <span className="mt-0.5 text-[var(--certiva-glow)]">&#x2713;</span>
+            <motion.ul variants={stagger} className="mt-7 space-y-3">
+              {AI_OUTCOMES.map((item) => (
+                <motion.li key={item} variants={fadeUp} className="flex items-start gap-3 text-sm font-medium text-gray-700">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-100 text-[var(--certiva-green)]">
+                    <Sparkles size={11} />
+                  </span>
                   <span>{item}</span>
                 </motion.li>
               ))}
             </motion.ul>
             <motion.div variants={fadeUp} className="mt-8">
-              <Link href="/ai" className="text-sm font-semibold text-[var(--certiva-glow)] hover:underline">
-                Explore AI Features →
+              <Link href="/ai" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--certiva-green)] hover:underline">
+                See how CertivAI works <ArrowRight size={15} />
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Certiv.AI product view */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 36 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="min-w-0"
           >
             <CertivAIProductPreview />
@@ -232,191 +244,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── How It Works ──────────────────────────────────────────────── */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
-            <motion.h2 variants={fadeUp} className="text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-gray-900">
-              Seven steps from application to certificate
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mt-4 text-gray-600">
-              Certiva enforces the right order. Every gate is checked. Every document is in place.
-            </motion.p>
-          </motion.div>
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-            className="mt-16 space-y-0"
-          >
-            {WORKFLOW_STEPS.map((step, i) => (
-              <motion.div key={step.num} variants={fadeUp} className="flex gap-5">
-                <div className="flex flex-col items-center">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--certiva-green)] text-sm font-bold text-white">
-                    {step.num}
-                  </div>
-                  {i < WORKFLOW_STEPS.length - 1 && <div className="mt-1 h-12 w-px bg-[var(--certiva-pale)]" />}
-                </div>
-                <div className="pb-10">
-                  <h3 className="text-lg font-bold text-gray-900">{step.title}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{step.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── The Cost of Doing It the Old Way ──────────────────────────── */}
-      <section className="bg-gray-50 py-24">
+      <section className="border-y border-gray-100 bg-white py-12">
         <div className="mx-auto max-w-6xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
-            <motion.div variants={fadeUp}><SectionBadge>Without Certiva</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-gray-900">
-              The cost of doing it the old way.{" "}
-              <span className="text-[var(--certiva-green)]">Every one is a real risk.</span>
-            </motion.h2>
-          </motion.div>
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-            className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {PROBLEMS.map((p) => (
-              <motion.div
-                key={p.title}
-                variants={fadeUp}
-                className="rounded-2xl border border-gray-200 bg-white p-6 transition hover:border-[var(--certiva-pale)] hover:shadow-[0_4px_24px_rgba(26,71,49,0.08)]"
-              >
-                <p.icon className="h-6 w-6 text-[var(--certiva-green)]" />
-                <h3 className="mt-3 text-base font-bold text-gray-900">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{p.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Standards ─────────────────────────────────────────────────── */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
-            <motion.h2 variants={fadeUp} className="text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-gray-900">
-              Eight standards. One system. <span className="text-[var(--certiva-green)]">Your documents.</span>
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-gray-600">
-              Each standard has its own scope system, audit time rules, and document requirements. Certiva handles each one correctly — and adapts to your CB&apos;s specific document templates.
-            </motion.p>
-          </motion.div>
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-            className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {STANDARDS_DISPLAY.map((s) => (
-              <motion.div
-                key={s.code}
-                variants={fadeUp}
-                whileHover={{ y: -4 }}
-                className="rounded-2xl border border-gray-200 bg-white p-5 transition-all hover:border-[var(--certiva-pale)] hover:shadow-[0_4px_24px_rgba(26,71,49,0.08)]"
-              >
-                <p className="text-sm font-bold text-[var(--certiva-green)]">{s.code}</p>
-                <p className="mt-1 text-sm font-semibold text-gray-900">{s.name}</p>
-                <p className="mt-2 text-xs text-gray-500">{s.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-          <p className="mt-8 text-center text-sm text-gray-500">
-            Need a standard not listed? We add new standards and adapt your existing document templates.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Comparison ────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-24">
-        <div className="mx-auto max-w-4xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.div variants={fadeUp} className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
-              <div className="grid grid-cols-2 gap-0 border-b border-gray-200 bg-gray-50 px-6 py-3">
-                <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Without Certiva</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-[var(--certiva-green)]">With Certiva</span>
-              </div>
-              {COMPARISON.map((row, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUp}
-                  className="grid grid-cols-2 gap-0 border-b border-gray-100 px-6 py-4 last:border-0"
-                >
-                  <span className="text-sm text-gray-500">{row.without}</span>
-                  <span className="text-sm font-medium text-gray-900">{row.with}</span>
-                </motion.div>
+          <div className="flex flex-col items-center justify-between gap-7 lg:flex-row">
+            <div className="text-center lg:text-left">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--certiva-green)]">Multi-standard by design</p>
+              <h2 className="mt-2 text-xl font-bold text-gray-950">Eight standards. One operating system.</h2>
+            </div>
+            <div className="flex max-w-3xl flex-wrap justify-center gap-2 lg:justify-end">
+              {STANDARDS.map((standard) => (
+                <span key={standard} className="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-900">
+                  {standard}
+                </span>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── Why Not Just a CRM? ────────────────────────────────────── */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-4xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
-            <motion.div variants={fadeUp}><SectionBadge>vs. Generic CRMs</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-gray-900">
-              Other platforms are just a CRM.<br />
-              <span className="text-[var(--certiva-green)]">Their entire product is our smallest feature.</span>
-            </motion.h2>
-            <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-gray-600">
-              Most &ldquo;certification management&rdquo; software is a client database with a calendar bolted on. They don&apos;t generate your documents. They don&apos;t enforce signing chains. They don&apos;t calculate audit times. They don&apos;t validate committee coverage. Certiva does all of that &mdash; and yes, it has a CRM too.
-            </motion.p>
-          </motion.div>
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}
-            className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            {[
-              { title: "Online Application", desc: "Clients apply through a branded form \u2014 no login needed. On submit, the audit set creates itself, stages are provisioned, and the client gets a portal account." },
-              { title: "Document Generation", desc: "15+ FR forms filled from live data into your own Word templates. Company details, scope, dates, team, EA codes \u2014 all populated automatically." },
-              { title: "Digital Signing", desc: "Visual signatures placed in-browser with enforced order. Signed PDFs flattened with name, timestamp, and IP. Meeting attendees sign via email token \u2014 no account needed." },
-              { title: "NC Management", desc: "Nonconformities raised, tracked, and closed with full evidence trail. Auto-computed due dates. A stage can\u2019t advance with open NCs." },
-              { title: "Training Academy", desc: "Built-in courses with PDF/video material, timed exams, automatic scoring. Unlimited users, no per-seat fees. No separate tool needed." },
-              { title: "AI Intelligence", desc: "Reports drafted and reviewed by AI. Audit days calculated. Clause exclusions suggested. All reviewable and overridable." },
-              { title: "Auditor Management", desc: "Qualifications, EA codes, witness records. Scope coverage validated before every audit. Double-booking prevented." },
-              { title: "Built-in CRM", desc: "Pipeline by phase, consultant referrals, finance overview \u2014 the feature other platforms call their whole product." },
-            ].map((item) => (
-              <motion.div
-                key={item.title}
-                variants={fadeUp}
-                className="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-[var(--certiva-pale)] hover:shadow-[0_4px_24px_rgba(26,71,49,0.08)]"
-              >
-                <h3 className="text-sm font-bold text-gray-900">{item.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-gray-500">{item.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── CTA Banner ────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[var(--bg-dark)] py-24">
+      <section className="relative overflow-hidden bg-[var(--bg-dark)] py-20">
         <GradientOrbs />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-white">
-              Your next accreditation witness audit should find{" "}
-              <span className="gradient-text">nothing to flag.</span>
+            <motion.h2
+              variants={fadeUp}
+              className="text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-white"
+            >
+              See your certification process <span className="gradient-text">inside Certiva.</span>
             </motion.h2>
-            <motion.p variants={fadeUp} className="mt-4 text-gray-300">
-              One system. Every standard. Every document. Every signature. Every proof your accreditation body will ask for &mdash; already recorded, in order.
+            <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-xl text-base leading-7 text-gray-300">
+              Bring your standards and document set. We&apos;ll show you how the complete workflow fits your certification body.
             </motion.p>
             <motion.div variants={fadeUp} className="mt-8">
-              <Link href="/contact" className="rounded-full bg-[var(--certiva-green)] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)]">
-                Book a Live Demo
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--certiva-green)] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)]"
+              >
+                Book a Live Demo <ArrowRight size={15} />
               </Link>
-              <p className="mt-4 text-xs text-gray-400">
-                We&apos;ll walk through your standards and show how your documents integrate.
-              </p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
