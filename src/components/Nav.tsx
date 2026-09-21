@@ -1,9 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
+  { label: "Product", href: "/#product" },
   { label: "Features", href: "/features" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "AI", href: "/ai" },
@@ -31,11 +33,11 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <img src="/logo-wordmark-white.svg" alt="Certiva" className="h-8" />
+          <Image src="/logo-wordmark-white.svg" alt="Certiva" width={160} height={44} priority className="h-8 w-auto" />
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex lg:gap-8">
           {NAV_LINKS.map((l) => (
             <Link
               key={l.href}

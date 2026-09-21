@@ -41,3 +41,13 @@ body {
   background: #ffffff;
   color: #111827;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
