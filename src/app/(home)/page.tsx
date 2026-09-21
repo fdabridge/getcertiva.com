@@ -187,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* ── AI Spotlight ──────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[var(--bg-dark)] py-24">
+      <section id="certivai" className="relative scroll-mt-20 overflow-hidden bg-[var(--bg-dark)] py-24">
         <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={fadeUp}><SectionBadge dark>Outcomes</SectionBadge></motion.div>

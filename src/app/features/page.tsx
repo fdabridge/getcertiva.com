@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import GradientOrbs from "@/components/GradientOrbs";
 import SectionBadge from "@/components/SectionBadge";
@@ -160,6 +160,24 @@ export default function FeaturesPage() {
   const [activeTab, setActiveTab] = useState("workflow");
   const active = TABS.find((t) => t.id === activeTab) || TABS[0];
 
+  useEffect(() => {
+    const syncFromHash = () => {
+      const requested = window.location.hash.slice(1) as FeaturePreviewId;
+      if (TABS.some((tab) => tab.id === requested)) setActiveTab(requested);
+    };
+    const frame = window.requestAnimationFrame(syncFromHash);
+    window.addEventListener("hashchange", syncFromHash);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", syncFromHash);
+    };
+  }, []);
+
+  function selectTab(id: FeaturePreviewId) {
+    setActiveTab(id);
+    window.history.replaceState(null, "", `#${id}`);
+  }
+
   return (
     <>
       <section className="relative overflow-hidden bg-[var(--bg-dark)] pt-32 pb-16">
@@ -182,7 +200,11 @@ export default function FeaturesPage() {
             {TABS.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                id={`tab-${tab.id}`}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                onClick={() => selectTab(tab.id)}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                   activeTab === tab.id
                     ? "bg-[var(--certiva-green)] text-white"
@@ -196,6 +218,7 @@ export default function FeaturesPage() {
 
           {/* Content */}
           <motion.div
+            id="feature-view"
             key={active.id}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
