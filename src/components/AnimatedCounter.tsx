@@ -9,7 +9,6 @@ export default function AnimatedCounter({ end, suffix = "" }: { end: number; suf
 
   useEffect(() => {
     if (!isInView) return;
-    let start = 0;
     const duration = 1500;
     const startTime = performance.now();
     function step(now: number) {

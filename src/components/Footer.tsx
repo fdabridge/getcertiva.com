@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const PLATFORM_LINKS = [
   { label: "Features", href: "/features" },
@@ -23,7 +24,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <img src="/logo-wordmark-white.svg" alt="Certiva" className="h-8" />
+              <Image src="/logo-wordmark-white.svg" alt="Certiva" width={160} height={44} className="h-8 w-auto" />
             </div>
             <p className="mt-4 text-sm leading-relaxed text-gray-400">
               The complete operations platform for accredited certification bodies. Built inside a real CB.

@@ -62,7 +62,7 @@ export default function HowItWorksPage() {
             ))}
           </motion.div>
           <p className="mt-8 text-center text-sm text-gray-600">
-            Surveillance and recertification follow adapted flows with their own gates. Every cycle adds to the same continuous audit trail — so when your accreditation body asks for proof of any decision, it's already there.
+            Surveillance and recertification follow adapted flows with their own gates. Every cycle adds to the same continuous audit trail — so when your accreditation body asks for proof of any decision, it&apos;s already there.
           </p>
           <div className="mt-8 text-center">
             <Link href="/contact" className="rounded-full bg-[var(--certiva-green)] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[var(--certiva-mid)]">
