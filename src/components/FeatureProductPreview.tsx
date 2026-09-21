@@ -158,7 +158,7 @@ const LIVE_DOCUMENTS = [
   ["Certification Agreement", "FR.221", "Signed 15 Sep", "12 Sep 2025"],
   ["Audit Plan — Stage 1", "FR.223", "Signed 25 Sep", "24 Sep 2025"],
   ["Opening / Closing Meeting", "FR.225", "Signed 14 Oct", "13 Oct 2025"],
-  ["ISO 9001 Certificate", "Certificate", "Awaiting signature", "15 Dec 2025"],
+  ["ISO 9001 Certificate", "Certificate", "Issued", "15 Dec 2025"],
 ];
 
 function DocumentsPreview() {
@@ -166,12 +166,12 @@ function DocumentsPreview() {
     <AppFrame role="client" active="Documents">
       <div><Eyebrow>Client portal</Eyebrow><h3 className="mt-1 text-base font-bold text-gray-950">Documents</h3><p className="mt-1 text-[9px] text-gray-500">Documents shared with you by Certiva</p></div>
       <div className="mt-4 space-y-2">
-        {LIVE_DOCUMENTS.map(([name, form, status, received], index) => (
+        {LIVE_DOCUMENTS.map(([name, form, status, received]) => (
           <div key={name} className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3">
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-emerald-50 text-emerald-700"><FileText size={14} /></span>
             <div className="min-w-0 flex-1"><p className="truncate text-[10px] font-bold text-gray-800">{name} <span className="font-medium text-gray-400">({form})</span></p><p className="mt-0.5 text-[8px] text-gray-400">Received {received}</p></div>
-            <Pill tone={index === LIVE_DOCUMENTS.length - 1 ? "amber" : "green"}>{status}</Pill>
-            <span className="hidden rounded border border-emerald-800 px-2 py-1 text-[8px] font-bold text-emerald-800 md:block">{index === LIVE_DOCUMENTS.length - 1 ? "Open to Sign" : "Open"}</span>
+            <Pill tone="green">{status}</Pill>
+            <span className="hidden rounded border border-emerald-800 px-2 py-1 text-[8px] font-bold text-emerald-800 md:block">Open</span>
           </div>
         ))}
       </div>
@@ -182,20 +182,27 @@ function DocumentsPreview() {
 function SigningPreview() {
   return (
     <AppFrame role="client" active="Documents">
-      <div className="flex items-start justify-between gap-3"><div><Eyebrow>Document viewer</Eyebrow><h3 className="mt-1 text-base font-bold text-gray-950">ISO 9001 Certificate</h3><p className="mt-1 text-[9px] text-gray-500">Cascade Metal Fabrication Inc.</p></div><Pill tone="amber">Your signature required</Pill></div>
+      <div className="flex items-start justify-between gap-3"><div><Eyebrow>Document viewer</Eyebrow><h3 className="mt-1 text-base font-bold text-gray-950">Audit Plan — Stage 2 (FR.223)</h3><p className="mt-1 text-[9px] text-gray-500">Cascade Metal Fabrication Inc.</p></div><Pill tone="amber">Organisation representative signature required</Pill></div>
       <div className="mt-4 grid gap-3 lg:grid-cols-[1.35fr_0.65fr]">
         <div className="rounded-lg border border-gray-200 bg-gray-200 p-3">
           <div className="mx-auto min-h-[260px] max-w-[300px] bg-white p-5 shadow-sm">
-            <div className="flex items-center justify-between border-b border-gray-200 pb-3"><span className="text-[10px] font-black text-emerald-900">CERTIVA</span><ShieldCheck size={19} className="text-emerald-800" /></div>
-            <p className="mt-8 text-center text-[8px] font-bold uppercase tracking-[0.18em] text-emerald-800">Certificate of Registration</p>
-            <p className="mt-4 text-center text-sm font-bold text-gray-900">Cascade Metal Fabrication Inc.</p>
-            <p className="mt-2 text-center text-[8px] leading-4 text-gray-500">has been assessed and registered as meeting the requirements of</p>
-            <p className="mt-3 text-center text-base font-black text-emerald-900">ISO 9001:2015</p>
-            <div className="mt-7 border-t border-gray-200 pt-3 text-[7px] text-gray-500"><p>Certificate no. UAF-2025-001</p><p className="mt-1">Valid until 14 December 2028</p></div>
+            <div className="flex items-center justify-between border-b border-gray-200 pb-3"><span className="text-[10px] font-black text-emerald-900">CERTIVA</span><span className="text-[8px] font-bold text-gray-500">FR.223</span></div>
+            <p className="mt-5 text-center text-[10px] font-black uppercase tracking-[0.12em] text-emerald-900">Audit Plan</p>
+            <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-[7px]">
+              <div><p className="text-gray-400">Organisation</p><p className="mt-0.5 font-bold text-gray-700">Cascade Metal Fabrication Inc.</p></div>
+              <div><p className="text-gray-400">Standard</p><p className="mt-0.5 font-bold text-gray-700">ISO 9001:2015</p></div>
+              <div><p className="text-gray-400">Audit stage</p><p className="mt-0.5 font-bold text-gray-700">Stage 2</p></div>
+              <div><p className="text-gray-400">Audit date</p><p className="mt-0.5 font-bold text-gray-700">25 Nov 2025</p></div>
+            </div>
+            <div className="mt-4 overflow-hidden rounded border border-gray-200 text-[6px]">
+              <div className="grid grid-cols-[42px_1fr_70px] bg-emerald-900 px-2 py-1.5 font-bold text-white"><span>Time</span><span>Process / clause</span><span>Auditor</span></div>
+              {[["09:00", "Opening meeting", "Anna Kowalski"], ["09:30", "Context & leadership", "Anna Kowalski"], ["11:00", "Operations and production", "Anna Kowalski"], ["15:30", "Findings & closing meeting", "Anna Kowalski"]].map(([time, process, auditor]) => <div key={time} className="grid grid-cols-[42px_1fr_70px] border-t border-gray-100 px-2 py-2 text-gray-600"><span>{time}</span><span>{process}</span><span>{auditor}</span></div>)}
+            </div>
+            <div className="mt-4 border-t border-gray-200 pt-3 text-[7px] text-gray-500"><p className="font-bold text-gray-700">Organisation representative</p><p className="mt-1">Signature confirms receipt and acceptance of the audit plan.</p></div>
           </div>
         </div>
         <div className="space-y-3">
-          <div className="rounded-lg border border-gray-200 bg-white p-3"><p className="text-[8px] font-bold uppercase tracking-wide text-gray-400">Signing sequence</p>{[["1", "Certification Manager", true], ["2", "Client representative", false]].map(([n, label, done]) => <div key={String(n)} className="mt-3 flex items-center gap-2"><span className={`grid h-5 w-5 place-items-center rounded-full text-[8px] font-bold ${done ? "bg-emerald-700 text-white" : "bg-amber-100 text-amber-800"}`}>{done ? <Check size={10} /> : n}</span><div><p className="text-[8px] font-semibold text-gray-700">{label}</p><p className="text-[7px] text-gray-400">{done ? "Signed with timestamp" : "Ready for signature"}</p></div></div>)}</div>
+          <div className="rounded-lg border border-gray-200 bg-white p-3"><p className="text-[8px] font-bold uppercase tracking-wide text-gray-400">Required signer</p><div className="mt-3 flex items-center gap-2"><span className="grid h-6 w-6 place-items-center rounded-full bg-amber-100 text-amber-800"><PenLine size={11} /></span><div><p className="text-[8px] font-semibold text-gray-700">Organisation representative</p><p className="text-[7px] text-amber-700">Ready for signature</p></div></div><div className="mt-3 rounded bg-gray-50 p-2 text-[7px] leading-3 text-gray-500">FR.223 is signed by the organisation representative before the audit stage proceeds.</div></div>
           <div className="rounded-lg bg-emerald-800 p-3 text-white"><PenLine size={14} /><p className="mt-2 text-[9px] font-bold">Place signature</p><p className="mt-1 text-[7px] leading-3 text-emerald-100">Draw or use your saved signature. The final PDF is flattened with name and timestamp.</p><div className="mt-3 rounded bg-white px-3 py-2 text-center text-[8px] font-bold text-emerald-900">Review and sign</div></div>
         </div>
       </div>
@@ -261,7 +268,7 @@ function ClientPreview() {
   return (
     <AppFrame role="client" active="Overview">
       <div><Eyebrow>Client portal</Eyebrow><h3 className="mt-1 text-base font-bold text-gray-950">Cascade Metal Fabrication Inc.</h3><p className="mt-1 text-[9px] text-gray-500">ISO 9001:2015 · UAF</p></div>
-      <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3"><div className="flex items-start gap-2"><AlertTriangle size={14} className="mt-0.5 text-amber-700" /><div><p className="text-[8px] font-bold uppercase text-amber-700">Action required</p><p className="mt-1 text-[10px] font-bold text-amber-900">You have 1 document to sign</p><p className="mt-1 text-[8px] text-amber-700">Open Documents to review and sign the certificate.</p></div></div></div>
+      <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3"><div className="flex items-start gap-2"><AlertTriangle size={14} className="mt-0.5 text-amber-700" /><div><p className="text-[8px] font-bold uppercase text-amber-700">Action required</p><p className="mt-1 text-[10px] font-bold text-amber-900">Audit Plan — Stage 2 needs your signature</p><p className="mt-1 text-[8px] text-amber-700">Open Documents to review and sign FR.223 as the organisation representative.</p></div></div></div>
       <p className="mt-4 text-[8px] font-bold uppercase tracking-wide text-gray-400">Setup checklist</p>
       <div className="mt-2 grid gap-2 sm:grid-cols-2">{[["Organisation employees", "4 added, all signatures on file", true], ["Documents", "1 document needs your signature", false]].map(([label, value, done]) => <div key={String(label)} className="flex items-center gap-3 rounded-lg border border-gray-200 bg-white p-3"><span className={`grid h-6 w-6 place-items-center rounded-full text-[9px] font-black ${done ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"}`}>{done ? <Check size={12} /> : "!"}</span><div><p className="text-[9px] font-bold text-gray-800">{label}</p><p className="mt-0.5 text-[7px] text-gray-400">{value}</p></div></div>)}</div>
       <div className="mt-3 rounded-lg border border-gray-200 bg-white p-3"><div className="flex items-center justify-between"><p className="text-[9px] font-bold text-gray-700">Certification Progress</p><Pill>Certified</Pill></div><div className="mt-3 flex justify-between">{["Application", "Quotation", "Stage 1", "Stage 2", "Committee", "Certificate"].map((step) => <div key={step} className="flex flex-col items-center"><span className="grid h-5 w-5 place-items-center rounded-full bg-emerald-700 text-white"><Check size={10} /></span><span className="mt-1 hidden text-[6px] text-gray-400 md:block">{step}</span></div>)}</div></div>
