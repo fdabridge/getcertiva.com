@@ -3,8 +3,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import GradientOrbs from "@/components/GradientOrbs";
 import SectionBadge from "@/components/SectionBadge";
+import FeatureProductPreview, { type FeaturePreviewId } from "@/components/FeatureProductPreview";
 
-const TABS = [
+const TABS: { id: FeaturePreviewId; label: string; title: string; bullets: string[] }[] = [
   {
     id: "workflow",
     label: "Audit Workflow",
@@ -169,7 +170,7 @@ export default function FeaturesPage() {
             What changes when your CB runs on Certiva
           </h1>
           <p className="mt-4 text-lg text-gray-300">
-            Not a feature list — the outcomes each capability delivers, and what not having it costs.
+            Explore each capability alongside a faithful view of the working product and its current demo workflows.
           </p>
         </div>
       </section>
@@ -199,7 +200,7 @@ export default function FeaturesPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-12 grid gap-12 lg:grid-cols-2"
+            className="mt-12 grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start"
           >
             <div>
               <h2 className="text-2xl font-extrabold text-gray-900">{active.title}</h2>
@@ -212,22 +213,11 @@ export default function FeaturesPage() {
                 ))}
               </ul>
             </div>
-            {/* Screenshot placeholder — Replace with actual product screenshot — {active.id} view */}
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
-              <div className="flex items-center gap-2 border-b border-gray-200 pb-3">
-                <div className="h-2.5 w-2.5 rounded-full bg-red-300" />
-                <div className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
-                <div className="h-2.5 w-2.5 rounded-full bg-green-300" />
-                <span className="ml-2 text-xs text-gray-400">certiva.app/{active.id}</span>
-              </div>
-              <div className="mt-4 space-y-3">
-                {[1,2,3,4].map((n) => (
-                  <div key={n} className="flex items-center gap-3">
-                    <div className="h-3 rounded bg-gray-200" style={{ width: `${60 + n * 8}%` }} />
-                  </div>
-                ))}
-                <div className="mt-4 h-24 rounded-xl bg-[var(--certiva-pale)]" />
-              </div>
+            <div className="min-w-0">
+              <FeatureProductPreview view={active.id} />
+              <p className="mt-3 text-center text-[11px] text-gray-400">
+                Rebuilt from the current Certiva demo interface using synthetic company data.
+              </p>
             </div>
           </motion.div>
         </div>

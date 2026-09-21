@@ -5,6 +5,7 @@ import { GitBranch, Sparkles, FileText, PenLine, Users, ShieldCheck, AlertTriang
 import GradientOrbs from "@/components/GradientOrbs";
 import SectionBadge from "@/components/SectionBadge";
 import ProductShowcase, { HeroProductPreview } from "@/components/ProductShowcase";
+import { CertivAIProductPreview } from "@/components/FeatureProductPreview";
 import { FEATURES, COMPARISON, WORKFLOW_STEPS } from "@/lib/constants";
 
 const fadeUp = {
@@ -218,38 +219,15 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
 
-          {/* AI Terminal */}
+          {/* Certiv.AI product view */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl border border-gray-700 bg-[var(--bg-surface)] p-6 font-mono text-sm"
+            className="min-w-0"
           >
-            <div className="mb-4 flex items-center gap-2">
-              <div className="h-3 w-3 rounded-full bg-red-500/60" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
-              <div className="h-3 w-3 rounded-full bg-green-500/60" />
-              <span className="ml-2 text-xs text-gray-500">AI Output</span>
-            </div>
-            <pre className="whitespace-pre-wrap text-gray-400 leading-6">
-{`> Generating Stage 2 report...
-  Client: Apex Manufacturing Ltd
-  Standards: ISO 9001 + ISO 14001 (integrated)
-  Audit days: 4.0 (Stage 2)
-
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Evidence extracted from 23 documents
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Findings placed into template cells
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Conclusion checkboxes set
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` Safety check: no leaked names, no placeholders
-
-> Report review (TÜRKAK profile)...
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` All mandatory clauses covered
-`}<span className="text-[var(--certiva-glow)]">&#x2713;</span>{` NC classification correct
-`}<span className="text-yellow-400">&#x26A0;</span>{` Finding depth: Clause 8.1 needs detail
-
-Report ready for lead auditor review.`}
-            </pre>
+            <CertivAIProductPreview />
           </motion.div>
         </div>
       </section>
