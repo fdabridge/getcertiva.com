@@ -6,6 +6,7 @@ import { BATCH_5 } from "./blog-batch-5";
 import { BATCH_6 } from "./blog-batch-6";
 import { BATCH_7 } from "./blog-batch-7";
 import { BATCH_8 } from "./blog-batch-8";
+import { BATCH_9 } from "./blog-batch-9";
 
 export interface BlogPost {
   slug: string;
@@ -2691,4 +2692,5 @@ Book a demo at getcertiva.com and see how Certiva's real-time pipeline dashboard
   ...BATCH_6,
   ...BATCH_7,
   ...BATCH_8,
+  ...BATCH_9,
 ];
