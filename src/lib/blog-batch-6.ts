@@ -575,4 +575,72 @@ That is the foundation a growing CB needs.
 
 Book a Certiva demo to see how your current workflow can become a repeatable operating system before volume exposes its weak points.`
   },
+  {
+    slug: "certiva-ai-astra-6-fable-5",
+    title: "Certiva's AI Features Now Support Astra 6.0 and Fable 5",
+    excerpt: "Certiva's AI workflows can now run on either Astra 6.0 or Fable 5, giving certification bodies more choice without changing the reviewable, human-controlled way the platform works.",
+    date: "2026-09-23",
+    readTime: "6 min",
+    category: "AI",
+    content: `## Two Model Options, One Certiva Workflow
+
+Certiva's AI features can now be supported by either Astra 6.0 or Fable 5.
+
+This is an infrastructure upgrade, but its value is practical: certification bodies can use Certiva's AI workflows with either supported model while keeping the same structured process, the same review steps, and the same operational controls.
+
+The model may help produce the first draft or analyze an input. It does not make the certification decision. Your auditors, planners, and reviewers remain in control of every output that enters the official record.
+
+### Where Astra 6.0 and Fable 5 Support Certiva
+
+The two supported models sit behind the AI features already built into day-to-day certification work:
+
+- **Audit report drafting:** Certiva turns audit data, evidence, findings, scope information, and standard-specific requirements into a structured draft inside the certification body's own report template.
+- **Report review:** Completed reports can be checked against accreditation-body rule profiles and applicable standard requirements so the reviewer can address possible gaps before submission.
+- **Auditor CV parsing:** Qualification details, standards experience, EA codes, technical scope, and other competence information are extracted into a structured profile for the planner to verify.
+- **Application reading:** Information from a client's application is extracted into the appropriate workflow fields, including inputs used by the audit time calculator.
+- **Clause exclusion suggestions:** The client's scope and activities are analyzed against a controlled list of potentially excludable clauses. The platform filters the result, and the planner confirms every suggestion.
+
+These are not open-ended chatbot tasks. Each feature has a defined input, a structured output, and a clear review point.
+
+### Model Choice Does Not Change Accountability
+
+A more capable model can improve the quality of a draft, but it cannot replace professional judgment. That distinction matters in accredited certification.
+
+Whether a workflow uses Astra 6.0 or Fable 5, Certiva applies the same operating principle:
+
+1. **The system provides the right context.** The model works with the relevant engagement data, documents, standard configuration, and task instructions.
+2. **The output is structured.** Results return to a specific part of the workflow rather than appearing as untracked text in a separate chat window.
+3. **A qualified person reviews it.** An auditor, planner, or reviewer can edit, reject, or replace what the AI produced.
+4. **The official action stays human-controlled.** AI output does not issue a certificate, approve a nonconformity, confirm competence, or make a certification decision on its own.
+
+Supporting two models expands the technology available to the platform. It does not weaken the controls around how that technology is used.
+
+### Why Supporting More Than One Model Matters
+
+Certification bodies should not have to redesign their processes every time AI technology changes. Their workflows, templates, approval rules, and audit trails should remain stable even as the underlying models improve.
+
+Certiva separates the operational workflow from the model that supports it. Astra 6.0 and Fable 5 can each work within the same Certiva control layer, so the durable part of the system is the certification process itself.
+
+That model-independent approach gives Certiva room to keep improving AI performance without turning model selection into another administrative burden for the CB. It also keeps the focus where it belongs: the quality, consistency, and traceability of the work product.
+
+### What Stays the Same
+
+The most important parts of Certiva's AI design have not changed:
+
+- Every AI-generated output is reviewable and editable.
+- Deterministic calculations and workflow rules remain in code rather than being delegated to a language model.
+- AI suggestions cannot bypass required approvals, signing chains, or stage gates.
+- The certification body's own templates, rules, and processes remain the source of truth.
+- Qualified professionals retain responsibility for the final record and decision.
+
+The result is a stronger AI foundation without a new operating model for your team. Auditors still review reports. Planners still confirm extracted information. Reviewers still evaluate findings. Certiva simply gives them a faster, better-prepared starting point.
+
+## AI That Fits Certification Work
+
+Astra 6.0 and Fable 5 give Certiva two supported model options for the specialized AI work inside the platform. The real product, however, is not the model name. It is what the model helps your team complete: a drafted report, a pre-reviewed document, a structured competence profile, a populated application, or a carefully constrained suggestion.
+
+That is how Certiva treats AI: as infrastructure for certification work, governed by the same human judgment and process discipline the work has always required.
+
+Book a demo at getcertiva.com to see Certiva's AI workflows powered by Astra 6.0 or Fable 5 in action.`
+  },
 ];
