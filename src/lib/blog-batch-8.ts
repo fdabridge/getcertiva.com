@@ -130,7 +130,7 @@ We are ready to begin.
 
 ## Join the Certiva Waitlist
 
-To reserve your certification body's place, email <a href="mailto:hello@getcertiva.com?subject=Certiva%20Waitlist" class="font-semibold text-[var(--certiva-green)] hover:underline">hello@getcertiva.com</a> with the subject **Certiva Waitlist**.
+To reserve your certification body's place, email <a href="mailto:innovation@getcertiva.com?subject=Certiva%20Waitlist" class="font-semibold text-[var(--certiva-green)] hover:underline">innovation@getcertiva.com</a> with the subject **Certiva Waitlist**.
 
 Please include your CB name, country, accreditation body, standards, and the tools you use today. Your email timestamp establishes your position in the first-come-first-served queue.
 

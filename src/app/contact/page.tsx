@@ -40,7 +40,7 @@ export default function ContactPage() {
               </ul>
               <div className="mt-6 border-t border-gray-200 pt-6">
                 <p className="text-sm font-semibold text-gray-900">Direct contact</p>
-                <p className="mt-2 text-sm text-gray-600">hello@getcertiva.com</p>
+                <p className="mt-2 text-sm text-gray-600">innovation@getcertiva.com</p>
                 <p className="mt-1 text-xs text-gray-400">Response time: 1 business day</p>
               </div>
             </div>
