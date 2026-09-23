@@ -78,6 +78,7 @@ export default function LaunchPopup() {
             src="/certiva-launch-28-september.svg"
             alt="Certiva goes live on 28 September 2026"
             fill
+            loading="eager"
             sizes="(max-width: 640px) calc(100vw - 2rem), 368px"
             className="object-cover transition duration-500 group-hover:scale-[1.015]"
           />
