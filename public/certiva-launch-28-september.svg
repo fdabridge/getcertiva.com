@@ -1,0 +1,66 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="60" y1="24" x2="1110" y2="696" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1F15"/>
+      <stop offset="1" stop-color="#050C08"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1018 104) rotate(137.2) scale(510 398)">
+      <stop stop-color="#52C27A" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#52C27A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="date" x1="111" y1="354" x2="627" y2="597" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8F3DC"/>
+      <stop offset="0.48" stop-color="#70DB98"/>
+      <stop offset="1" stop-color="#40916C"/>
+    </linearGradient>
+    <filter id="shadow" x="632" y="194" width="527" height="444" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#020704" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="720" rx="42" fill="url(#bg)"/>
+  <rect width="1200" height="720" rx="42" fill="url(#glow)"/>
+  <circle cx="1116" cy="-46" r="274" fill="#255A3D" fill-opacity="0.24"/>
+  <circle cx="50" cy="725" r="246" fill="#1A4731" fill-opacity="0.18"/>
+
+  <g transform="translate(70 61)">
+    <rect width="55" height="55" rx="15" fill="#2D6A4F"/>
+    <path d="M16 12.5H34L41 19.5V42.5H16V12.5Z" stroke="#F7FBF8" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M34 12.5V20H41M21.5 30L26.5 35L36 24" stroke="#F7FBF8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="72" y="40" fill="#F7FBF8" font-family="Arial, Helvetica, sans-serif" font-size="37" font-weight="700">certiva</text>
+  </g>
+
+  <rect x="73" y="178" width="230" height="42" rx="21" fill="#52C27A" fill-opacity="0.12" stroke="#52C27A" stroke-opacity="0.36"/>
+  <circle cx="98" cy="199" r="5" fill="#52C27A"/>
+  <text x="115" y="206" fill="#79D99B" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2.1">LAUNCHING SOON</text>
+
+  <text x="70" y="305" fill="#F7FBF8" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="800" letter-spacing="-2.2">CERTIVA GOES LIVE</text>
+  <text x="68" y="453" fill="url(#date)" font-family="Arial, Helvetica, sans-serif" font-size="142" font-weight="900" letter-spacing="-7">28 SEP</text>
+  <text x="73" y="516" fill="#B8C9C0" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="600" letter-spacing="6">2026</text>
+  <text x="73" y="605" fill="#F7FBF8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600">First certification body cohort</text>
+  <text x="73" y="642" fill="#9CB0A5" font-family="Arial, Helvetica, sans-serif" font-size="21">Access released in waitlist order.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="660" y="215" width="452" height="348" rx="25" fill="#F7FAF8"/>
+    <rect x="660" y="215" width="452" height="60" rx="25" fill="#EAF3ED"/>
+    <rect x="660" y="252" width="452" height="23" fill="#EAF3ED"/>
+    <circle cx="692" cy="245" r="7" fill="#FF5F57"/>
+    <circle cx="716" cy="245" r="7" fill="#FFBD2E"/>
+    <circle cx="740" cy="245" r="7" fill="#28C840"/>
+    <rect x="688" y="303" width="188" height="17" rx="8.5" fill="#213C2C"/>
+    <rect x="688" y="337" width="348" height="11" rx="5.5" fill="#CFDDD4"/>
+    <rect x="688" y="358" width="298" height="11" rx="5.5" fill="#DDE7E1"/>
+    <rect x="688" y="402" width="119" height="111" rx="17" fill="#E5F4EA"/>
+    <rect x="823" y="402" width="119" height="111" rx="17" fill="#EEF4F0"/>
+    <rect x="958" y="402" width="126" height="111" rx="17" fill="#EEF4F0"/>
+    <path d="M720 469L741 490L780 443" stroke="#2D6A4F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="842" y="429" width="80" height="9" rx="4.5" fill="#98AB9F"/>
+    <rect x="842" y="448" width="64" height="9" rx="4.5" fill="#BCCBC2"/>
+    <rect x="842" y="482" width="76" height="13" rx="6.5" fill="#52C27A"/>
+    <rect x="979" y="427" width="83" height="10" rx="5" fill="#98AB9F"/>
+    <rect x="979" y="450" width="60" height="10" rx="5" fill="#BCCBC2"/>
+    <rect x="979" y="480" width="82" height="15" rx="7.5" fill="#D8F3DC"/>
+  </g>
+
+  <path d="M1040 594L1071 625L1123 573" stroke="#52C27A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"/>
+</svg>
