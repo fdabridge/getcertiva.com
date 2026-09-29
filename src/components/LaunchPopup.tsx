@@ -82,7 +82,7 @@ export default function LaunchPopup() {
         if (event.target === event.currentTarget) close();
       }}
     >
-      <div className="relative grid max-h-[calc(100dvh-1.5rem)] w-full max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[var(--bg-dark)] shadow-[0_32px_100px_rgba(0,0,0,0.6)] lg:grid-cols-[1.7fr_1fr]">
+      <div className="relative grid max-h-[calc(100dvh-1.5rem)] w-full max-w-6xl overflow-y-auto rounded-2xl border border-white/10 bg-[var(--bg-dark)] shadow-[0_32px_100px_rgba(0,0,0,0.6)] md:grid-cols-[1.35fr_1fr] lg:grid-cols-[1.7fr_1fr]">
         <button
           type="button"
           onClick={close}
@@ -115,7 +115,7 @@ export default function LaunchPopup() {
           </button>
         </div>
 
-        <div className="flex flex-col justify-between p-5 sm:p-6 lg:p-7">
+        <div className="flex flex-col justify-between p-5 sm:p-6 md:p-5 lg:p-7">
           <div>
             <div className="flex items-center gap-4">
               <Image
@@ -133,11 +133,11 @@ export default function LaunchPopup() {
             </div>
             <h2
               id="launch-popup-title"
-              className="mt-5 text-3xl font-semibold leading-[1.05] tracking-[-0.04em] text-white"
+              className="mt-5 text-3xl font-semibold leading-[1.05] tracking-[-0.04em] text-white md:text-2xl lg:text-3xl"
             >
               Certification operations, connected.
             </h2>
-            <p id="launch-popup-description" className="mt-4 text-sm leading-6 text-slate-300">
+            <p id="launch-popup-description" className="mt-4 text-sm leading-6 text-slate-300 md:text-xs md:leading-5 lg:text-sm lg:leading-6">
               Certiva is live. See the platform built with certification bodies, for certification bodies.
             </p>
 
