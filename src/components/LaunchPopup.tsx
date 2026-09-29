@@ -123,8 +123,7 @@ export default function LaunchPopup() {
                 alt="Certiva"
                 width={122}
                 height={32}
-                className="w-[7.2rem]"
-                style={{ height: "auto" }}
+                style={{ width: "7.2rem", height: "auto" }}
               />
               <span className="h-4 w-px bg-white/15" />
               <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--certiva-glow)]">
