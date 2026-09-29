@@ -10,6 +10,7 @@ const LAUNCH_ARTICLE = "/blog/certiva-is-live-certification-body-operations-conn
 const REEL_URL = "https://www.instagram.com/reel/Dd1Ym5iuUaJ/";
 const CERTIVA_INSTAGRAM = "https://www.instagram.com/getcertiva/";
 const FOUNDER_INSTAGRAM = "https://www.instagram.com/batuhankutayeryilmaz/";
+const CERTIVA_LINKEDIN = "https://www.linkedin.com/company/getcertiva/";
 const STORAGE_KEY = "certiva-live-popup-dismissed-v1";
 
 function wasDismissed() {
@@ -189,6 +190,14 @@ export default function LaunchPopup() {
                 className="transition hover:text-[var(--certiva-glow)]"
               >
                 @batuhankutayeryilmaz
+              </a>
+              <a
+                href={CERTIVA_LINKEDIN}
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-[var(--certiva-glow)]"
+              >
+                Certiva on LinkedIn
               </a>
             </div>
           </div>
