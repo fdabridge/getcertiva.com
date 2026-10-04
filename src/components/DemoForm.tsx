@@ -27,9 +27,11 @@ export default function DemoForm() {
       }
 
       setSubmitted(true);
-    } catch {
+    } catch (submissionError) {
       setError(
-        "We couldn't deliver your request. Please try again or email innovation@getcertiva.com.",
+        submissionError instanceof Error
+          ? submissionError.message
+          : "We couldn't deliver your request. Please try again or email innovation@getcertiva.com.",
       );
     } finally {
       setLoading(false);
