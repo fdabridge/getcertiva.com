@@ -24,7 +24,7 @@ export default function HowItWorksPage() {
         <GradientOrbs />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <SectionBadge dark>Workflow</SectionBadge>
-          <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
+          <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-extrabold tracking-[-0.03em] text-white">
             Every step enforced. Every gate checked. Nothing left for your accreditation body to find.
           </h1>
           <p className="mt-4 text-lg text-gray-300">

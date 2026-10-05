@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1128" height="191" viewBox="0 0 1128 191" role="img" aria-label="Certiva LinkedIn company banner template">
+  <style>@font-face{font-family:Manrope;src:url("../02-color-and-type/fonts/Manrope-wght.ttf") format("truetype");font-weight:200 800}</style>
+  <title>Certiva - certification work, connected</title>
+  <rect width="1128" height="191" fill="#060D08"/>
+  <rect x="445" y="0" width="4" height="191" fill="#1A2E1E"/>
+  <text x="492" y="73" fill="#52C27A" font-family="Manrope,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">CERTIFICATION BODY SOFTWARE</text>
+  <text x="490" y="120" fill="white" font-family="Manrope,Arial,sans-serif" font-size="35" font-weight="700" letter-spacing="-1">Certification work, connected.</text>
+  <text x="492" y="153" fill="#A9BFB0" font-family="Manrope,Arial,sans-serif" font-size="17">Application · audit planning · documents · review</text>
+  <rect x="1068" y="0" width="60" height="191" fill="#1A4731"/>
+  <circle cx="1098" cy="53" r="8" fill="#52C27A"/><circle cx="1098" cy="96" r="8" fill="#52C27A"/><circle cx="1098" cy="139" r="8" fill="#52C27A"/>
+  <!-- Left side intentionally empty for LinkedIn avatar and UI overlap. -->
+</svg>

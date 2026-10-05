@@ -1,0 +1,46 @@
+{
+  "brand": "Certiva",
+  "version": "1.0",
+  "issued": "2026-10-05",
+  "status": "production-baseline; refined-mark-pending-source-recovery",
+  "positioning": "Purpose-built software for certification-body operations, with human judgment and traceable control at the center.",
+  "audience": ["ISO management-system certification body owners", "operations leaders", "technical managers", "audit planners"],
+  "tone": ["calm", "peer-to-peer", "specific", "operational", "credible"],
+  "avoid": ["AI-first hype", "compliance guarantees", "unsupported time-savings claims", "competitor attacks", "FDABridge motifs", "fictional product UI presented as real"],
+  "logo": {
+    "primary": "01-logos/certiva-wordmark-primary.svg",
+    "reversed": "01-logos/certiva-wordmark-reversed.svg",
+    "icon": "01-logos/certiva-icon.svg",
+    "clearspace": "At least one quarter of the icon width around the lockup",
+    "minimumDigitalWidthPx": 120
+  },
+  "colors": {
+    "night": "#060D08",
+    "surface": "#0D1710",
+    "border": "#1A2E1E",
+    "forest": "#1A4731",
+    "mid": "#2D6A4F",
+    "leaf": "#40916C",
+    "signal": "#52C27A",
+    "pale": "#D8F3DC",
+    "mist": "#F0FAF4",
+    "ink": "#111827",
+    "white": "#FFFFFF"
+  },
+  "type": {
+    "primary": "Manrope",
+    "fallback": "Arial, Helvetica, sans-serif",
+    "weights": [400, 500, 600, 700, 800],
+    "monoOptional": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+  },
+  "layout": {
+    "spacingBasePx": 8,
+    "outerMarginMinimum": "5% on social assets; 20 mm on A4 documents",
+    "headingAlignment": "left",
+    "contentRule": "One workflow, one point, one next action per asset"
+  },
+  "urls": {
+    "website": "https://www.getcertiva.com",
+    "contact": "https://www.getcertiva.com/contact"
+  }
+}

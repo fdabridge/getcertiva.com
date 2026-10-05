@@ -184,7 +184,7 @@ export default function FeaturesPage() {
         <GradientOrbs />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <SectionBadge dark>Platform</SectionBadge>
-          <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
+          <h1 className="mt-6 text-[clamp(2rem,5vw,4rem)] font-extrabold tracking-[-0.03em] text-white">
             What changes when your CB runs on Certiva
           </h1>
           <p className="mt-4 text-lg text-gray-300">

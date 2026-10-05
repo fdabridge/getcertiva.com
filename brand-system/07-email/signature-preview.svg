@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-label="Certiva email signature preview">
+  <style>@font-face{font-family:Manrope;src:url("../02-color-and-type/fonts/Manrope-wght.ttf") format("truetype");font-weight:200 800}</style>
+  <title>Certiva email signature preview</title>
+  <rect width="900" height="320" fill="white"/>
+  <rect x="70" y="48" width="4" height="224" fill="#1A4731"/>
+  <text x="100" y="91" fill="#111827" font-family="Manrope,Arial,sans-serif" font-size="25" font-weight="700">[Full name]</text>
+  <text x="100" y="122" fill="#4B6354" font-family="Manrope,Arial,sans-serif" font-size="17">[Title] · Certiva</text>
+  <text x="100" y="174" fill="#1A4731" font-family="Manrope,Arial,sans-serif" font-size="32">certiva</text>
+  <text x="100" y="209" fill="#1A4731" font-family="Manrope,Arial,sans-serif" font-size="17">innovation@getcertiva.com  ·  getcertiva.com</text>
+  <text x="100" y="241" fill="#7B8E80" font-family="Manrope,Arial,sans-serif" font-size="16">Software for certification-body operations</text>
+</svg>

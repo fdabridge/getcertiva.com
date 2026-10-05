@@ -26,7 +26,7 @@ export default function BlogPage() {
     <>
       <section className="bg-[var(--bg-dark)] pt-32 pb-16">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-black tracking-[-0.03em] text-white">
+          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-[-0.03em] text-white">
             Certiva Insights
           </h1>
           <p className="mt-4 text-lg text-gray-300">

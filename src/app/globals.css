@@ -10,6 +10,9 @@
   --certiva-glow:   #52C27A;
   --certiva-pale:   #D8F3DC;
   --certiva-mist:   #F0FAF4;
+  --certiva-ink:    #111827;
+  --certiva-white:  #FFFFFF;
+  --certiva-font:   var(--font-manrope), Arial, Helvetica, sans-serif;
 }
 
 @keyframes orb-float {
@@ -38,8 +41,9 @@
 }
 
 body {
-  background: #ffffff;
-  color: #111827;
+  background: var(--certiva-white);
+  color: var(--certiva-ink);
+  font-family: var(--certiva-font);
 }
 
 html {

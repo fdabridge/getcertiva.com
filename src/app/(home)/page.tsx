@@ -69,7 +69,7 @@ export default function HomePage() {
             </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-7 text-[clamp(2.7rem,5.2vw,4.8rem)] font-black leading-[0.97] tracking-[-0.045em] text-white"
+              className="mt-7 text-[clamp(2.7rem,5.2vw,4.8rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white"
             >
               Run the certification. <span className="gradient-text">Keep the proof.</span>
             </motion.h1>
@@ -96,7 +96,7 @@ export default function HomePage() {
             <motion.div variants={fadeUp} className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
               {[["14", "enforced phases"], ["15+", "generated forms"], ["8", "ISO standards"]].map(([value, label]) => (
                 <div key={label}>
-                  <p className="text-xl font-black text-white sm:text-2xl">{value}</p>
+                  <p className="text-xl font-extrabold text-white sm:text-2xl">{value}</p>
                   <p className="mt-1 text-[10px] font-semibold uppercase leading-4 tracking-[0.1em] text-gray-500">{label}</p>
                 </div>
               ))}
@@ -134,7 +134,7 @@ export default function HomePage() {
             <motion.div variants={fadeUp}><SectionBadge>Working Product</SectionBadge></motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mx-auto mt-6 max-w-3xl text-[clamp(2rem,4.5vw,3.75rem)] font-black leading-[1.05] tracking-[-0.035em] text-gray-950"
+              className="mx-auto mt-6 max-w-3xl text-[clamp(2rem,4.5vw,3.75rem)] font-extrabold leading-[1.05] tracking-[-0.035em] text-gray-950"
             >
               One live record for the entire certification.
             </motion.h2>
@@ -167,7 +167,7 @@ export default function HomePage() {
             <motion.div variants={fadeUp}><SectionBadge dark>Why Certiva</SectionBadge></motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-white"
+              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-white"
             >
               Less administration. <span className="gradient-text">Stronger control.</span>
             </motion.h2>
@@ -202,13 +202,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="certivai" className="scroll-mt-20 bg-[#f5f8f6] py-20 sm:py-24">
+      <section id="certivai" className="scroll-mt-20 overflow-x-clip bg-[var(--certiva-mist)] py-20 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={fadeUp}><SectionBadge>CertivAI</SectionBadge></motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-gray-950"
+              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-gray-950"
             >
               Expert work, accelerated—not hidden.
             </motion.h2>
@@ -268,7 +268,7 @@ export default function HomePage() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2
               variants={fadeUp}
-              className="text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-white"
+              className="text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-white"
             >
               See your certification process <span className="gradient-text">inside Certiva.</span>
             </motion.h2>

@@ -14,7 +14,7 @@ export default function ContactPage() {
       <section className="relative overflow-hidden bg-[var(--bg-dark)] pt-32 pb-16">
         <GradientOrbs />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-[clamp(2rem,5vw,4rem)] font-black tracking-[-0.03em] text-white">
+          <h1 className="text-[clamp(2rem,5vw,4rem)] font-extrabold tracking-[-0.03em] text-white">
             Book a live demo
           </h1>
           <p className="mt-4 text-lg text-gray-300">

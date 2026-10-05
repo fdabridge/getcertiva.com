@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.category}
             </span>
           </div>
-          <h1 className="mt-4 text-[clamp(1.75rem,4vw,3rem)] font-black tracking-[-0.02em] text-white leading-tight">
+          <h1 className="mt-4 text-[clamp(1.75rem,4vw,3rem)] font-extrabold tracking-[-0.02em] text-white leading-tight">
             {post.title}
           </h1>
           <p className="mt-4 text-gray-400 text-sm">

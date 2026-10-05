@@ -76,7 +76,7 @@ export default function AboutPage() {
           <motion.div variants={fadeUp}><SectionBadge dark>About Certiva</SectionBadge></motion.div>
           <motion.h1
             variants={fadeUp}
-            className="mx-auto mt-7 max-w-4xl text-[clamp(2.6rem,5.5vw,4.8rem)] font-black leading-[0.98] tracking-[-0.045em] text-white"
+            className="mx-auto mt-7 max-w-4xl text-[clamp(2.6rem,5.5vw,4.8rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white"
           >
             Certification software, built from <span className="gradient-text">inside the work.</span>
           </motion.h1>
@@ -92,7 +92,7 @@ export default function AboutPage() {
             <motion.div variants={fadeUp}><SectionBadge>Why We Built It</SectionBadge></motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-gray-950"
+              className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-gray-950"
             >
               The problem was not a lack of software.
             </motion.h2>
@@ -117,7 +117,7 @@ export default function AboutPage() {
         >
           {[["14", "controlled phases"], ["15+", "generated forms"], ["8", "ISO standards"], ["1", "complete audit trail"]].map(([value, label]) => (
             <motion.div key={label} variants={fadeUp} className="bg-white px-4 py-7 text-center">
-              <p className="text-3xl font-black text-[var(--certiva-green)]">{value}</p>
+              <p className="text-3xl font-extrabold text-[var(--certiva-green)]">{value}</p>
               <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.13em] text-gray-500">{label}</p>
             </motion.div>
           ))}
@@ -128,7 +128,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl">
             <motion.div variants={fadeUp}><SectionBadge>Operating Principles</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-gray-950">
+            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-gray-950">
               Built for control without creating more administration.
             </motion.h2>
           </motion.div>
@@ -191,7 +191,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-[var(--bg-dark)] py-20">
         <GradientOrbs />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-white">
+          <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-white">
             See how Certiva fits <span className="gradient-text">your certification body.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-gray-300">

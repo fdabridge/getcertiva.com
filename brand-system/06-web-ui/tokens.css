@@ -1,0 +1,32 @@
+/* Certiva marketing tokens. Names intentionally match the live site where possible. */
+:root {
+  --certiva-night: #060D08;
+  --certiva-surface: #0D1710;
+  --certiva-border: #1A2E1E;
+  --certiva-green: #1A4731;
+  --certiva-mid: #2D6A4F;
+  --certiva-light: #40916C;
+  --certiva-glow: #52C27A;
+  --certiva-pale: #D8F3DC;
+  --certiva-mist: #F0FAF4;
+  --certiva-ink: #111827;
+  --certiva-white: #FFFFFF;
+  --certiva-font: Manrope, Arial, Helvetica, sans-serif;
+  --certiva-space-1: 8px;
+  --certiva-space-2: 16px;
+  --certiva-space-3: 24px;
+  --certiva-space-4: 32px;
+  --certiva-space-6: 48px;
+  --certiva-space-8: 64px;
+  --certiva-radius-sm: 8px;
+  --certiva-radius-md: 16px;
+  --certiva-radius-lg: 24px;
+}
+
+/* Accessible reference pairings, not a mandatory component library. */
+.certiva-surface-dark { background: var(--certiva-night); color: var(--certiva-white); }
+.certiva-surface-light { background: var(--certiva-white); color: var(--certiva-ink); }
+.certiva-button-primary { background: var(--certiva-green); color: var(--certiva-white); border-radius: 999px; }
+.certiva-button-primary:focus-visible { outline: 3px solid var(--certiva-glow); outline-offset: 3px; }
+.certiva-link-light { color: var(--certiva-green); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.certiva-link-dark { color: var(--certiva-glow); text-decoration-thickness: 2px; text-underline-offset: 3px; }

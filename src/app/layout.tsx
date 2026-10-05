@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import LaunchPopup from "@/components/LaunchPopup";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+const manrope = localFont({
+  src: "../../brand-system/02-color-and-type/fonts/Manrope-wght.ttf",
+  weight: "200 800",
+  display: "swap",
+  variable: "--font-manrope",
 });
 
 export const metadata: Metadata = {
-  title: "Certiva — AI-Powered ISO Certification Management",
-  description: "End-to-end audit platform for ISO certification bodies. 14-phase lifecycle, AI document generation, digital signing, accreditation compliance.",
+  title: "Certiva — Certification Body Operations, Connected",
+  description: "Software for certification bodies to manage applications, audits, documents, reviews and decisions in one controlled workflow.",
   metadataBase: new URL("https://www.getcertiva.com"),
   icons: {
     icon: "/logo-icon.svg",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={manrope.variable}>
       <body className="antialiased">
         <Nav />
         <main>{children}</main>

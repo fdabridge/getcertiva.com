@@ -95,7 +95,7 @@ export default function AIPage() {
             <motion.div variants={fadeUp}><SectionBadge dark>CertivAI</SectionBadge></motion.div>
             <motion.h1
               variants={fadeUp}
-              className="mt-7 text-[clamp(2.7rem,5.2vw,4.7rem)] font-black leading-[0.98] tracking-[-0.045em] text-white"
+              className="mt-7 text-[clamp(2.7rem,5.2vw,4.7rem)] font-extrabold leading-[1.02] tracking-[-0.035em] text-white"
             >
               Expert work, <span className="gradient-text">accelerated.</span>
             </motion.h1>
@@ -127,7 +127,7 @@ export default function AIPage() {
         <div className="mx-auto max-w-6xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center">
             <motion.div variants={fadeUp}><SectionBadge>What It Does</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mx-auto mt-6 max-w-3xl text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-gray-950">
+            <motion.h2 variants={fadeUp} className="mx-auto mt-6 max-w-3xl text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-gray-950">
               AI for the work that consumes your experts&apos; time.
             </motion.h2>
             <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600">
@@ -164,7 +164,7 @@ export default function AIPage() {
         <div className="relative z-10 mx-auto max-w-6xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="max-w-3xl">
             <motion.div variants={fadeUp}><SectionBadge dark>How It Works</SectionBadge></motion.div>
-            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-white">
+            <motion.h2 variants={fadeUp} className="mt-6 text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-white">
               A controlled pipeline, not a <span className="gradient-text">black box.</span>
             </motion.h2>
           </motion.div>
@@ -177,7 +177,7 @@ export default function AIPage() {
           >
             {PIPELINE.map((item) => (
               <motion.div key={item.step} variants={fadeUp} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-[12px]">
-                <span className="text-xs font-black text-[var(--certiva-glow)]">{item.step}</span>
+                <span className="text-xs font-extrabold text-[var(--certiva-glow)]">{item.step}</span>
                 <h3 className="mt-5 text-lg font-bold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-gray-400">{item.copy}</p>
               </motion.div>
@@ -192,7 +192,7 @@ export default function AIPage() {
             <motion.div variants={fadeUp} className="mx-auto grid h-11 w-11 place-items-center rounded-2xl bg-emerald-100 text-[var(--certiva-green)]">
               <Sparkles size={20} />
             </motion.div>
-            <motion.h2 variants={fadeUp} className="mx-auto mt-6 max-w-3xl text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-gray-950">
+            <motion.h2 variants={fadeUp} className="mx-auto mt-6 max-w-3xl text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-gray-950">
               Automation with a clear boundary around professional judgment.
             </motion.h2>
           </motion.div>
@@ -217,7 +217,7 @@ export default function AIPage() {
       <section className="relative overflow-hidden bg-[var(--bg-dark)] py-20">
         <GradientOrbs />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-black leading-[1.06] tracking-[-0.035em] text-white">
+          <h2 className="text-[clamp(2rem,4vw,3.4rem)] font-extrabold leading-[1.06] tracking-[-0.035em] text-white">
             Bring one real workflow. <span className="gradient-text">See the time it gives back.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-gray-300">
